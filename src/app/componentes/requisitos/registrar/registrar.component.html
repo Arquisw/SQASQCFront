@@ -1,0 +1,47 @@
+<body class="body">
+    <section class="titulo">
+        <h1 >Registrar requisitos</h1>
+    </section>
+    <section class="descripcion">
+        <br>
+        <h4>Recuerde que si su proyecto ya tiene un proceso de ingenieria de requisitos no debe registrar sus requerimientos</h4>
+        <p>{{mensajeError}}</p>
+    </section>
+    <section class="contenido">
+        <div class="row">   
+            <div class="col-1"></div>      
+            <div class="col-6">
+              <div class="formUser">
+                <form (ngSubmit)="guardar(formularioRequisito)" #formularioRequisito="ngForm">
+                  <hr>
+                  <div class="form-group form-control-lg">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" ngModel class="form-control form-control-lg" placeholder="Ingrese el nombre" >
+                  </div>
+                  <div class="form-group form-control-lg">
+                    <label >Descripcion</label>
+                    <input type="text" name="descripcion" ngModel class="form-control form-control-lg"  placeholder="Ingrese la descripcion">
+                  </div>
+                  
+                  <div class="form-group form-control-lg">
+                    <label >Tipo de requisito</label>
+                    <br>
+                    <select class="form-group form-control-lg" name="tipoRequisito" ngModel id="tipoRequisito" placeholder="Elegir...">
+                        <option value="Funcional">Funcional</option>
+                        <option value="No funcional">No funcional</option>
+                    </select>
+                    <!--<input type="email" name="tipoRequisito" ngModel class="form-control form-control-lg"  placeholder="Seleccione el tipo de requisito">-->
+                  </div>                
+                  <br>
+                  <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type="button" class="btn btn-outline-light btn-lg" style="border-color: #7df802;" (click)="guardar(formularioRequisito)">Guardar</button>
+                  </div>
+                </form>
+              </div>            
+            </div>
+            <div class="col-5">
+                <img src="./assets/img.jpg">
+            </div>
+          </div>
+    </section>
+</body>

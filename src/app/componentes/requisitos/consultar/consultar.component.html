@@ -1,0 +1,19 @@
+<body class="body" >
+    <section class="titulo">
+        <h1 >Consultar</h1>               
+    </section>   
+    <p>{{mensajeError}}</p>
+    <hr>  
+    <section class="contenido">        
+        <div class="row">
+            <div class="card" style="width: 18rem;" *ngFor="let requisito of requisitos">
+                <div class="card-body">
+                    <h5 class="card-title">{{requisito.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2">tipo de requisito</h6>
+                    <h6 class="card-text">{{requisito.descripcion}}</h6>
+                    <a href="#" class="btn btn-outline-light" style="border-color: #7df802;">Editar</a>
+                </div>
+            </div>  
+        </div> 
+    </section>
+</body> 

@@ -1,0 +1,37 @@
+.nav-link, .modal-title, .dropdown-item
+{
+    
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover{
+    color: #7df802;
+    background-color: #292d33;
+}
+
+.nav-item:hover{
+    background-color: #7df802;     
+    color: white;
+}
+
+.navitem{
+    margin-right: 10%;    
+}
+
+
+.dropdown-item:active, .dropdown-item:hover{
+     background-color: #7df802;     
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+li
+{
+  margin-right: 15px;
+}
+
+

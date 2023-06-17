@@ -1,0 +1,49 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+    <div class="navitem">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/inicio">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/requisitos"> 
+              Requisitos
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/requisitos/consultar">Consultar</a></li>
+              <li><a class="dropdown-item" routerLink="/requisitos/registrar">Registrar</a></li>
+              <li><a class="dropdown-item" routerLink="/requisitos/calificar">Calificar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/informe">Informes</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Nosotros
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/proyectos">Proyectos</a></li>
+              <li><a class="dropdown-item" routerLink="/presentacion">Presentación</a></li>
+              <li><a class="dropdown-item" aria-current="page" routerLink="/fundamentacion">Fundamentación</a></li>
+              <li><a class="dropdown-item" routerLink="/acercanosotros">Responsables</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">   
+                <li><a class="dropdown-item" routerLink="/proyectos">Perfil</a></li>
+                <li><a class="dropdown-item" routerLink="/presentacion">Ajustes</a></li>
+                <hr>
+                <li><a class="dropdown-item" routerLink="/acercanosotros">Cerrar Sesion</a></li>           
+            </ul>
+          </li>
+      </ul>
+    </div>
+    </div>
+</nav>

@@ -1,0 +1,38 @@
+.body{    
+    background-color: #292d33;
+    color: white;  
+    height: 100vh;
+}
+.titulo{
+    padding-top: 5%;
+    padding-left: 15%;
+    color: white;
+}
+.descripcion{    
+    padding-left: 10%;
+    padding-right: 40%;
+}
+.contenido {
+    font-size: 1.5rem;
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+img
+{
+  display: block;
+  margin: 0px auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 10%;
+}
+button:hover{
+    background-color: #7df802;
+}
+.formUser {
+    margin-top: 10%;
+}
+

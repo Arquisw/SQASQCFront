@@ -1,0 +1,43 @@
+.body{    
+    background-color: #292d33;
+    color: white;  
+    height: 100vh;
+}
+
+.titulo{
+    padding-top: 5%;
+    padding-left: 15%;
+    color: white;
+}
+.contenido {
+    font-size: 1.5rem;
+}
+
+.list-group-item-action{
+    padding-top: 10%; 
+    list-style: none;
+    color: white;
+    transition: width 1s, height 1s, transform 1s;
+}
+
+.list-group-item-action:hover{
+    background-color: transparent;
+    cursor: pointer;
+    color: #7df802;
+    transform : scale(1.2);
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+img
+{
+  display: block;
+  margin: 0px auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 80%;
+}
+
