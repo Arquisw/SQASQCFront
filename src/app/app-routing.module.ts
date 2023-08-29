@@ -6,6 +6,7 @@ import { InformeComponent } from './componentes/informe/informe.component';
 import { CalificarComponent } from './componentes/requisitos/calificar/calificar.component';
 import { ConsultarComponent } from './componentes/requisitos/consultar/consultar.component';
 import { RegistrarComponent } from './componentes/requisitos/registrar/registrar.component';
+import { DetalleComponent } from './componentes/requisitos/detalle/detalle.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'requisitos/registrar',
     component:RegistrarComponent
+  },
+  {
+    path: 'requisitos/detalle/:id',
+    component:DetalleComponent
   },
   {
     path: '**',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RequisitoInterface } from '../../interfaces/requisito';
-import { Observable } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
@@ -17,12 +17,19 @@ export class RequisitosService {
   constructor(private http: HttpClient) { }
 
   getRequerimiento(){
-    return this.http.get<RequisitoInterface[]>(`${this.url}/requisitos`)
-                    .pipe(catchError(this.errorHandler));
+    return this.http.get<RequisitoInterface[]>(`${this.url}/requirements`).pipe(catchError(this.errorHandler));
   }
 
-  agregarRequerimiento(requisito:RequisitoInterface):Observable<RequisitoInterface>{
-    return this.http.post<RequisitoInterface>(`${this.url}/requisitos`,requisito);
+  agregarRequerimiento(requisito:RequisitoInterface):Promise<RequisitoInterface>{
+    return firstValueFrom(this.http.post<RequisitoInterface>(`${this.url}/requirements`,requisito));
+  }
+
+  getRequerimientoById(id:string):Promise<RequisitoInterface>{
+    return firstValueFrom(this.http.get<RequisitoInterface>(`${this.url}/requirements/${id}`));
+  }
+
+  actualizarRequerimiento(requisito:RequisitoInterface):Promise<RequisitoInterface>{
+    return firstValueFrom(this.http.put<RequisitoInterface>(`${this.url}/requirements${requisito.requirementId}`,requisito));
   }
 
   errorHandler(error: HttpErrorResponse){

@@ -1,6 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { RequisitoInterface, tipoRequisito } from 'src/app/interfaces/requisito';
+import { alert } from 'src/app/navbar/alert/alert';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service';
 
 @Component({
@@ -13,27 +18,44 @@ export class RegistrarComponent implements OnInit{
   mensajeError="";
 
   req : RequisitoInterface = {
-    nombre: '',
-    descripcion: '',
-    tipoRequisito : ''
+    name: '',
+    description: '',
+    typeRequirement : ''
 
   }
 
-  constructor(private requerimiento : RequisitosService) { }
+  constructor(private requerimiento : RequisitosService, private alert: alert, private constantes?:constantes, private activatedRoute?:ActivatedRoute) { }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {      
+    this.activatedRoute?.params.
+    pipe(
+        switchMap(({id}) => this.requerimiento.getRequerimientoById(id))
+        )
+      .subscribe(
+        resp => this.req=resp)
+      
+    
   }
 
   guardar(formularioRequisito:NgForm){
-    this.req.nombre=formularioRequisito.value.nombre;
-    this.req.descripcion=formularioRequisito.value.descripcion;
-    this.req.tipoRequisito=formularioRequisito.value.tipoRequisito
+    console.log(this.req.requirementId);
+    this.req.name=formularioRequisito.value.nombre;
+    this.req.description=formularioRequisito.value.descripcion;
+    this.req.typeRequirement=formularioRequisito.value.tipoRequisito;
     this.requerimiento.agregarRequerimiento(this.req)
-    .subscribe( resp => {this.req=resp} , 
-                error =>{ this.mensajeError = error}
-    )
-  }
+      .then( 
+        resp => {this.req=resp,        
+        this.alert.success(constantes.SW_BIEN_HECHO,constantes.SW_GUARDADO),
+        formularioRequisito.resetForm()
+        
+      },
+      (err:HttpErrorResponse) =>{ 
+        this.mensajeError=(err.error.humanMessage),
+        this.alert.error(constantes.SW_LO_SENTIMOS,err.error.humanMessage)}
+      )
+    }
+   
 
 }
 

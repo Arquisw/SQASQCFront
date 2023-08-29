@@ -14,7 +14,11 @@
 }
 
 .list-group-item-action{
-    padding-top: 10%; 
+    border-color: #7df802;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #212529;
+    border-radius: 1em;
     list-style: none;
     color: white;
     transition: width 1s, height 1s, transform 1s;

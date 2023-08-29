@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
@@ -13,7 +13,8 @@ import { InformeComponent } from './componentes/informe/informe.component';
 import { RegistrarComponent } from './componentes/requisitos/registrar/registrar.component';
 import { ConsultarComponent } from './componentes/requisitos/consultar/consultar.component';
 import { CalificarComponent } from './componentes/requisitos/calificar/calificar.component';
-import { InterceptorService } from './servicio/interceptor/interceptor.service';
+import { CommonModule } from '@angular/common';
+import { DetalleComponent } from './componentes/requisitos/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -24,20 +25,24 @@ import { InterceptorService } from './servicio/interceptor/interceptor.service';
     InformeComponent,
     RegistrarComponent,
     ConsultarComponent,
-    CalificarComponent
+    CalificarComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [
-    {
+    
+    /*{
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true
-    }
+    }*/
   ],
   bootstrap: [AppComponent]
 })

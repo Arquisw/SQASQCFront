@@ -33,6 +33,9 @@ button:hover{
     background-color: #7df802;
 }
 .formUser {
-    margin-top: 10%;
+    margin-top: 3%;
+}
+.breadcrumb{
+    margin-left: 170px;
 }
 

@@ -2,16 +2,23 @@
     <section class="titulo">
         <h1 >Consultar</h1>               
     </section>   
-    <p>{{mensajeError}}</p>
     <hr>  
-    <section class="contenido">        
+    <section class="contenido">   
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #7df802">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/requisitos"style="text-decoration: none; color: #7df802">Requisitos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Consultar</li>
+            </ol>
+        </nav>       
         <div class="row">
-            <div class="card" style="width: 18rem;" *ngFor="let requisito of requisitos">
-                <div class="card-body">
-                    <h5 class="card-title">{{requisito.nombre}}</h5>
-                    <h6 class="card-subtitle mb-2">tipo de requisito</h6>
-                    <h6 class="card-text">{{requisito.descripcion}}</h6>
-                    <a href="#" class="btn btn-outline-light" style="border-color: #7df802;">Editar</a>
+            <div class="card" style="width: 45rem;" *ngFor="let requisito of requisitos">
+                <div class="card-body" [routerLink]="['/requisitos/detalle', requisito.requirementId]">
+                    <h5 class="card-title">{{requisito.name}}</h5>
+                    <h6 class="card-subtitle mb-2" >tipo de requisito:{{requisito.typeRequirement}}</h6>
+                    <h6 class="card-text" >{{requisito.description}}</h6>
+                    <h6 class="card-text" >Id:{{requisito.requirementId}}</h6>
+                    <a [routerLink]="['/requisitos/detalle/', requisito.requirementId]"></a>
                 </div>
             </div>  
         </div> 

@@ -1,8 +1,8 @@
 export interface RequisitoInterface{
-    id?:            string;
-    nombre:         string;
-    descripcion:    string;
-    tipoRequisito:  string;
+    requirementId?:            string;
+    name:         string;
+    description:    string;
+    typeRequirement:  string;
 }
 
 export enum tipoRequisito{

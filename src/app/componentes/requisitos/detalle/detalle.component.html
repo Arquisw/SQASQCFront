@@ -1,0 +1,26 @@
+<body class="body" >
+    <section class="titulo">
+        <h1 >Consultar</h1>               
+    </section>   
+    <hr>  
+    <section class="contenido">   
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #7df802">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/requisitos"style="text-decoration: none; color: #7df802">Requisitos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Detalle</li>
+            </ol>
+        </nav>       
+        <div class="row">
+            <div class="card" style="width: 45rem;">
+                <div class="card-body" [routerLink]="['/requisitos/editar/', req.requirementId]">
+                    <h5 class="card-title">{{req.name}}</h5>
+                    <h6 class="card-subtitle mb-2" >tipo de requisito:{{req.typeRequirement}}</h6>
+                    <h6 class="card-text" >{{req.description}}</h6>
+                    <h6 class="card-text" >Id:{{req.requirementId}}</h6>
+                    <a [routerLink]="['/requisitos/editar/', req.requirementId]"></a>
+                </div>
+            </div>  
+        </div> 
+    </section>
+</body> 
