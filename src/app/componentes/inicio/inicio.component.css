@@ -1,7 +1,11 @@
 .body{    
     background-color: #292d33;
     color: white;  
-    height: 100vh;
+    min-height: 100vh;
+}
+hr{
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .titulo{
@@ -14,21 +18,19 @@
 }
 
 .list-group-item-action{
-    border-color: #7df802;
+    border: 1px solid #026f35;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #212529;
     border-radius: 1em;
     list-style: none;
     color: white;
-    transition: width 1s, height 1s, transform 1s;
 }
 
 .list-group-item-action:hover{
-    background-color: transparent;
-    cursor: pointer;
-    color: #7df802;
-    transform : scale(1.2);
+    border: none;
+    cursor: pointer;   
+    background-color: #026f35; 
 }
 
 html, body {

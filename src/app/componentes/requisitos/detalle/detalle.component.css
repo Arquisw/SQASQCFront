@@ -1,7 +1,7 @@
 .body{    
     background-color: #292d33;
     color: white;  
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .titulo{
@@ -9,7 +9,7 @@
     padding-left: 15%;
     color: white;
 }
-hr{
+.hrr{
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -26,10 +26,10 @@ hr{
 
 .card:hover{    
     background-color: #292d33;    
-    border-color: #7df802;
+    border-color: #026f35;
     cursor: pointer;
     .btn{
-        background-color: #7df802;
+        background-color: #026f35;
         color: black;
     }
 }
@@ -44,5 +44,11 @@ html, body {
 .breadcrumb{
     margin-left: 140px;
 }
+
+.car{
+    text-align: center;
+}
+
+
 
 

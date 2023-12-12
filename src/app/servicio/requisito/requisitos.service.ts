@@ -5,6 +5,7 @@ import { firstValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
+import { operacionInterface } from 'src/app/interfaces/operacion';
 
 
 @Injectable({
@@ -30,6 +31,10 @@ export class RequisitosService {
 
   actualizarRequerimiento(requisito:RequisitoInterface):Promise<RequisitoInterface>{
     return firstValueFrom(this.http.put<RequisitoInterface>(`${this.url}/requirements${requisito.requirementId}`,requisito));
+  }
+
+  obtenerOperaciones(id:string):Promise<number[]>{
+    return firstValueFrom(this.http.get<number[]>(`http://localhost:8080/characteristics/all-operations/${id}`));
   }
 
   errorHandler(error: HttpErrorResponse){

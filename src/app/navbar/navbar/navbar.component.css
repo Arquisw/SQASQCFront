@@ -6,12 +6,12 @@
 }
 
 .dropdown-item:hover{
-    color: #7df802;
+    color: #026f35;
     background-color: #292d33;
 }
 
 .nav-item:hover{
-    background-color: #7df802;     
+    background-color: #026f35;     
     color: white;
 }
 
@@ -21,7 +21,7 @@
 
 
 .dropdown-item:active, .dropdown-item:hover{
-     background-color: #7df802;     
+     background-color: #026f35;     
     color: white;
 }
 

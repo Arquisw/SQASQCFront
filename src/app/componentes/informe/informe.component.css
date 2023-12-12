@@ -1,0 +1,64 @@
+.body{    
+    background-color: #292d33;
+    color: white;  
+    height: 100vh;
+}
+
+.titulo{
+    padding-top: 5%;
+    padding-left: 15%;
+    color: white;
+}
+.contenido {
+    font-size: 1.5rem;
+}
+.col-md-4{    
+  margin-top: 4%;
+}
+
+.list-group-item-action{    
+    border: 1px solid #026f35;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #212529;
+    border-radius: 1em;
+    list-style: none;
+    color: white;
+}
+
+.list-group-item-action:hover{
+    border: none;
+    cursor: pointer;   
+    background-color: #026f35; 
+}
+a{
+    text-decoration:none;
+}
+
+hr{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+img
+{
+  display: block;
+  margin: 0px auto;
+  width: 450px;
+  height: 450px;
+  border-radius: 80%;
+  margin-top: 10%;
+}
+
+.breadcrumb{
+    margin-left: 300px;
+}
+
+
+
+

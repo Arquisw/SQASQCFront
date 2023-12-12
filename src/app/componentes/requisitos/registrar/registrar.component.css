@@ -21,6 +21,11 @@ html, body {
     overflow-x: hidden !important;
 }
 
+hr{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 img
 {
   display: block;
@@ -30,7 +35,7 @@ img
   border-radius: 10%;
 }
 button:hover{
-    background-color: #7df802;
+    background-color: #026f35;
 }
 .formUser {
     margin-top: 3%;

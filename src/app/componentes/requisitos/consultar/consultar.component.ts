@@ -9,9 +9,11 @@ import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service
   styleUrls: ['./consultar.component.css']
 })
 export class ConsultarComponent implements OnInit{
-  
+
+  paginaActual:number = 1;
   requisitos:RequisitoInterface[]=[];
   req : RequisitoInterface = {
+    projectId:1,
     name: '',
     description: '',
     typeRequirement : ''

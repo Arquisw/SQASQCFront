@@ -15,6 +15,7 @@ import { ConsultarComponent } from './componentes/requisitos/consultar/consultar
 import { CalificarComponent } from './componentes/requisitos/calificar/calificar.component';
 import { CommonModule } from '@angular/common';
 import { DetalleComponent } from './componentes/requisitos/detalle/detalle.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DetalleComponent } from './componentes/requisitos/detalle/detalle.compo
     FormsModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     

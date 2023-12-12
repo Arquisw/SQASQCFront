@@ -2,25 +2,83 @@
     <section class="titulo">
         <h1 >Consultar</h1>               
     </section>   
-    <hr>  
+    <hr class="hrr">  
     <section class="contenido">   
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #7df802">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="/requisitos"style="text-decoration: none; color: #7df802">Requisitos</a></li>
+                <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #026f35">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/requisitos"style="text-decoration: none; color: #026f35">Requisitos</a></li>                
+                <li class="breadcrumb-item"><a href="/requisitos/consultar"style="text-decoration: none; color: #026f35">Consultar</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detalle</li>
             </ol>
         </nav>       
         <div class="row">
-            <div class="card" style="width: 45rem;">
-                <div class="card-body" [routerLink]="['/requisitos/editar/', req.requirementId]">
-                    <h5 class="card-title">{{req.name}}</h5>
-                    <h6 class="card-subtitle mb-2" >tipo de requisito:{{req.typeRequirement}}</h6>
-                    <h6 class="card-text" >{{req.description}}</h6>
-                    <h6 class="card-text" >Id:{{req.requirementId}}</h6>
-                    <a [routerLink]="['/requisitos/editar/', req.requirementId]"></a>
+            <div class="col-4">
+                <br><br>
+                <h2>Titulo: {{req.name}}</h2>            
+                <h3>Tipo de requisito: {{req.typeRequirement}}</h3>            
+                <h3>Descripción: {{req.description}}</h3>            
+                <h3>Id: {{req.requirementId}}</h3>                
+                
+                <br>
+                <h3 *ngFor="let titulo of titulos">
+                  {{titulo}}
+                </h3>
+                <br><br>
+                <div class=" col-6">
+                  <button type="button" class="btn btn-success btn-lg" (click)="calcularOperaciones()">Realizar calculos</button>
                 </div>
-            </div>  
+            </div>
+
+            <div class="col-7">
+                <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Nota</th>
+                        <th scope="col">Descripcion</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let caracteristica of caracteristicas">
+                        <td *ngIf="caracteristica.gradeCharacteristic>8" scope="row">{{caracteristica.nameCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic<=8" scope="row">{{caracteristica.oppositeName}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>8 && caracteristica.gradeCharacteristic<=9" style="background-color: #026f35">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>7 && caracteristica.gradeCharacteristic<=8" style="background-color: #9fcc83">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>6 && caracteristica.gradeCharacteristic<=7" style="background-color: #c7e0b6">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>5 && caracteristica.gradeCharacteristic<=6" style="background-color: #fde59f">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>4 && caracteristica.gradeCharacteristic<=5" style="background-color: #fad66a">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>3 && caracteristica.gradeCharacteristic<=4" style="background-color: #fbc035">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>2 && caracteristica.gradeCharacteristic<=3" style="background-color: #fccccc">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>1 && caracteristica.gradeCharacteristic<=2" style="background-color: #fc6b70">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>=0 && caracteristica.gradeCharacteristic<=1" style="background-color: #f70712">{{caracteristica.gradeCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic>8">{{caracteristica.descriptionCharacteristic}}</td>
+                        <td *ngIf="caracteristica.gradeCharacteristic<=8">{{caracteristica.oppositeDescription}}</td>
+                      </tr>
+                    </tbody>              
+                  </table>
+                  <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th class="col-2">Error</th>
+                        <th class="col">Descripcion</th>
+                        <th class="col-1">DII</th>
+                        <th class="col-1">VAR</th>
+                        <th class="col-1">DDE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let caracteristica of caracteristicas" >                  
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'>{{caracteristica.typeError}}</td>                             
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'>{{caracteristica.oppositeName}}</td>
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input [(ngModel)]="caracteristica.dii" class="form-check-input" type="checkbox" disabled></td>    
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input class="form-check-input" type="checkbox" disabled [defaultChecked]='caracteristica.var' ></td>  
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input class="form-check-input" type="checkbox" disabled [defaultChecked]='caracteristica.dde' ></td>                                             
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>           
         </div> 
     </section>
 </body> 

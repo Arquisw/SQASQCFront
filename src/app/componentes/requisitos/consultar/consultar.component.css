@@ -1,7 +1,7 @@
 .body{    
     background-color: #292d33;
     color: white;  
-    height: 100vh;
+    min-height: 100vh;        
 }
 
 .titulo{
@@ -15,32 +15,35 @@ hr{
 }
 .contenido {
     margin-left: 8%;
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
+    
 }
 .card{
     margin: 1%;
     color: white;
-    background-color: #292d33;
-    border-color: white;
+    background-color: #154338;    
 }
 
 .card:hover{    
     background-color: #292d33;    
-    border-color: #7df802;
+    border-color: #154338;    
+    
+}
+.btn:hover{
+    background-color: #154338;
+    color: black;
+    border-color: #154338;
     cursor: pointer;
-    .btn{
-        background-color: #7df802;
-        color: black;
-    }
 }
 
 html, body {
+    
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
-.btn{   
-    margin-left: 70%;
-}
+
+
+
 .breadcrumb{
     margin-left: 140px;
 }

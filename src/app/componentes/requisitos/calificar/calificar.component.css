@@ -1,0 +1,61 @@
+.body{    
+    background-color: #292d33;
+    color: white;  
+    min-height: 100vh;
+}
+
+.titulo{
+    padding-top: 5%;
+    padding-left: 15%;
+    color: white;
+}
+.hrr{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.contenido {
+    margin-left: 8%;
+    font-size: 1.5rem;
+}
+.card{
+    margin: 1%;
+    color: white;
+    background-color: #292d33;
+    border-color: white;
+}
+
+.card:hover{    
+    background-color: #292d33;    
+    border-color: #026f35;
+    cursor: pointer;
+    .btn{
+        background-color: #026f35;
+        color: black;
+    }
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.btn{   
+    margin-left: 70%;
+}
+.breadcrumb{
+    margin-left: 140px;
+}
+
+.car{
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+
+

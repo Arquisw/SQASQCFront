@@ -18,6 +18,7 @@ export class RegistrarComponent implements OnInit{
   mensajeError="";
 
   req : RequisitoInterface = {
+    projectId: 1,
     name: '',
     description: '',
     typeRequirement : ''
@@ -39,7 +40,6 @@ export class RegistrarComponent implements OnInit{
   }
 
   guardar(formularioRequisito:NgForm){
-    console.log(this.req.requirementId);
     this.req.name=formularioRequisito.value.nombre;
     this.req.description=formularioRequisito.value.descripcion;
     this.req.typeRequirement=formularioRequisito.value.tipoRequisito;

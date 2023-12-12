@@ -22,7 +22,7 @@ const routes: Routes = [
     component: InformeComponent
   },
   {
-    path: 'requisitos/calificar',
+    path: 'requisitos/calificar/:id',
     component:CalificarComponent
   },
   {

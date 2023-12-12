@@ -1,1 +1,76 @@
-<p>calificar works!</p>
+<body class="body" >
+    <section class="titulo">
+        <h1 >Consultar</h1>               
+    </section>   
+    <hr class="hrr">  
+    <section class="contenido">   
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #026f35">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/requisitos"style="text-decoration: none; color: #026f35">Requisitos</a></li>
+                <li class="breadcrumb-item"><a href="/requisitos/consultar"style="text-decoration: none; color: #026f35">Consultar</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Calificar</li>
+            </ol>
+        </nav>       
+        <div class="row">
+            <div class="col-4">
+                <br><br>
+                <h2>Titulo: {{req.name}}</h2>            
+                <h3>Tipo de requisito: {{req.typeRequirement}}</h3>            
+                <h3>Descripción: {{req.description}}</h3>            
+                <h3>Id: {{req.requirementId}}</h3>   
+                
+            </div>
+
+            <div class="col-7">
+                <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th class="col-2">Nombre</th>
+                        <th class="col-1">Nota</th>
+                        <th class="col">Descripcion</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let caracteristica of caracteristicas">
+                        <td *ngIf='caracteristica.gradeCharacteristic>8'>{{caracteristica.nameCharacteristic}}</td>  
+                        <td *ngIf='caracteristica.gradeCharacteristic<=8'>{{caracteristica.oppositeName}}</td>                        
+                        <td><input style="width: 70%;" [(ngModel)]="caracteristica.gradeCharacteristic" type="number" name="nota" id="nota" maxlength=2 required></td>
+                        <td *ngIf='caracteristica.gradeCharacteristic>8'>{{caracteristica.descriptionCharacteristic}}</td>      
+                        <td *ngIf='caracteristica.gradeCharacteristic<=8'>{{caracteristica.oppositeDescription}}</td>
+                      </tr>
+                    </tbody>                    
+                  </table>                  
+
+                  <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th class="col-2">Error</th>
+                        <th class="col">Descripcion</th>
+                        <th class="col-1">DII</th>
+                        <th class="col-1">VAR</th>
+                        <th class="col-1">DDE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let caracteristica of caracteristicas" >                  
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'>{{caracteristica.typeError}}</td>                        
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'>{{caracteristica.oppositeName}}</td>
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input [(ngModel)]="caracteristica.dii" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>    
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input [(ngModel)]="caracteristica.var" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>  
+                          <td *ngIf='caracteristica.gradeCharacteristic<8.1'><input [(ngModel)]="caracteristica.dde" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>                                             
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div> 
+        <br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-success" (click)="calificar()">Calificar</button>
+        </div>        
+        <br>
+        <br>
+        <br><br>
+
+    </section>
+</body> 
