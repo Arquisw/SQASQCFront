@@ -25,13 +25,12 @@ export class DetalleComponent {
   caracteristicas :CaracteristicaInterface[] = [
   ];
 
-  
-
   operaciones : Array<number> = [];
   
   titulos : Array<string> = [];
-  
-  
+
+  errorMCC : number =0;
+  errorEIE : number =0;
 
   requisitos:RequisitoInterface[]=[];
   req : RequisitoInterface = {
@@ -68,6 +67,20 @@ export class DetalleComponent {
        
         )
     ).subscribe(resp => this.operaciones=resp) 
+
+    this.activatedRoute?.params.
+    pipe(
+      switchMap( 
+        ({id}) => this.requisitoService.obtenerOperacionError("1",id)       
+        )
+    ).subscribe(resp => this.errorEIE=resp) 
+
+    this.activatedRoute?.params.
+    pipe(
+      switchMap( 
+        ({id}) => this.requisitoService.obtenerOperacionError("2",id)       
+        )
+    ).subscribe(resp => this.errorMCC=resp) 
     
   }
 
@@ -81,8 +94,10 @@ export class DetalleComponent {
       "levelWeightScore:" + this.operaciones[2].toFixed(2),
       "maximunScore:"+ this.operaciones[3].toFixed(2),
       "calculateWeightAverage:"+ this.operaciones[4].toFixed(2),
-    ]  
-    
+      "Errores" ,
+      "EIE: " + this.errorEIE,
+      "MCC: " + this.errorMCC
+    ]      
   }
 
 }

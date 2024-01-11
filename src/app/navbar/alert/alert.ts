@@ -9,6 +9,18 @@ import Swal from "sweetalert2";
 
 export class alert{
 
+    public successTimer(titulo:String, text : String) : void {
+        Swal.fire({
+            icon: 'success',
+            title: `${titulo}`,
+            text: `${text}`
+          }).then(function (result) {
+            if (result.value) {
+                location.href ='/requisitos/consultar';
+            }
+        })
+    }
+
     public success(titulo:String, text : String) : void {
         Swal.fire({
             icon: 'success',

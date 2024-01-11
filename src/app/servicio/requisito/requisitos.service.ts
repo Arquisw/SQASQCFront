@@ -37,6 +37,10 @@ export class RequisitosService {
     return firstValueFrom(this.http.get<number[]>(`http://localhost:8080/characteristics/all-operations/${id}`));
   }
 
+  obtenerOperacionError(idError:string,idReq:string):Promise<number>{
+    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/${idError}/${idReq}`));
+  }
+
   errorHandler(error: HttpErrorResponse){
     return observableThrowError(error.message);
   }

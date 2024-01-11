@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
@@ -16,6 +17,7 @@ import { CalificarComponent } from './componentes/requisitos/calificar/calificar
 import { CommonModule } from '@angular/common';
 import { DetalleComponent } from './componentes/requisitos/detalle/detalle.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgApexchartsModule
   ],
   providers: [
     

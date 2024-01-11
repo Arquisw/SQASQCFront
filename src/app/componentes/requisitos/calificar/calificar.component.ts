@@ -1,12 +1,13 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs';
 import { CaracteristicaInterface } from 'src/app/interfaces/caracteristica';
 import { RequisitoInterface } from 'src/app/interfaces/requisito';
 import { CaracteristicaService } from 'src/app/servicio/caracteristica/caracteristica.service';
 import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service';
 import { alert } from 'src/app/navbar/alert/alert'
 import { ErrorInterface } from 'src/app/interfaces/error';
+import { waitForAsync } from '@angular/core/testing';
 
 @Component({
   selector: 'app-calificar',
@@ -82,15 +83,16 @@ export class CalificarComponent {
           this.error.var=false;
         }else{
           this.error.dde=this.caracteristicas[i].dde;
-          this.error.dii=this.caracteristicas[i].dde;
+          this.error.dii=this.caracteristicas[i].dii;
           this.error.var=this.caracteristicas[i].var; 
-        }           
+        }   
+        console.log(this.error);        
         this.caracteristicaService?.updateGrade(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.caracteristicas[i].gradeCharacteristic);
         this.caracteristicaService?.updateError(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.error);
       } 
 
-      this.alert.success("Exito!!","Se califico correctamente"); 
-      location.href ='/requisitos/consultar';   
+      this.alert.successTimer("Exito!!","Se califico correctamente");      
+      
       
     }  
     console.log(this.req)
