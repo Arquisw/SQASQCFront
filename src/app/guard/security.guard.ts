@@ -1,27 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CanActivate, Router, UrlTree } from '@angular/router';
 
 
-@Injectable()
-export class TokenInterceptor implements HttpInterceptor {
-  cookieService: any;
-
-  constructor(//private cookieService: CookieService
-  ) { }
-
-  intercept<T,R>(req: HttpRequest<T>, next: HttpHandler):
-  Observable<HttpEvent<R>> {
-    const token = this.cookieService.get('token');
-
-    if (token) {
-      const authReq = req.clone({
-        headers: req.headers.set('Authorization', `Bearer ${token}`)
-      });
-
-      return next.handle(authReq);
+@Injectable({
+  providedIn: 'root'
+})
+export class SecurityGuard implements CanActivate {
+  constructor(private router: Router) {}
+  canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const authorization = sessionStorage.getItem('Authorization');
+    if (!authorization) {
+      this.router.navigate(['/inicio']);
+      return false;
     }
-
-    return next.handle(req);
+    else if(this.tokenExpired(authorization)){
+      this.router.navigate(['/inicio']);
+      window.sessionStorage.removeItem('Authorization');
+      return false;
+    }
+    return true;
   }
+
+  private tokenExpired(token: string) {
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
+  
+ 
+
 }

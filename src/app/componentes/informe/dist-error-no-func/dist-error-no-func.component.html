@@ -1,0 +1,716 @@
+<body class="body">
+    <section class="titulo">
+        <h1>Informe Distribución de Error Para Todos los requisitos de Tipo No Funcional</h1>
+    </section>
+    <hr>
+    <section class="contenido">              
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/inicio" style="text-decoration: none; color: #026f35">Inicio</a></li>                    
+                    <li class="breadcrumb-item"><a href="/informe" style="text-decoration: none; color: #026f35">Informe</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">NdM Tipo No Funcional</li>
+                </ol>
+            </nav>
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#primeraGrafica" aria-expanded="false" aria-controls="primeraGrafica">
+                    DISTRIBUCIÓN DE ERRORES POR CARACTERÍSTICA PARA TODOS LOS REQUISITOS
+                </button> 
+            </div>
+            <div>
+                <br>
+            </div>
+            <div class="primeraGrafica">
+                <div class="collapse" id="primeraGrafica">
+                    <div class="row">    
+                        <!--CARACTERISTICAS SIN ERROR-->                    
+                        <div class="col-md-3">
+                            <br>
+                            <div style="background-color: #37502a; width: 35%;"> 
+                                ‎  Correcto
+                            </div>
+                            <div style="background-color: #50763c; width: 41%;"> 
+                                ‎  Inequivoco
+                            </div>
+                            <div style="background-color: #608928; width: 47%;"> 
+                                ‎  Completo
+                            </div>
+                            <div style="background-color: #2c9d54; width: 53%;"> 
+                                ‎  Consistente
+                            </div>
+                            <div style="background-color: #86b858; width: 59%;"> 
+                                ‎  Importante
+                            </div>
+                            <div style="background-color: #6be06d; width: 65%;"> 
+                                ‎  Estable
+                            </div>
+                            <div style="background-color: #8fe06d; width: 72%;"> 
+                                ‎  Comprobable
+                            </div>
+                            <div style="background-color: #b6e06d; width: 80%;"> 
+                                ‎  Identificable
+                            </div>
+                            <div style="background-color: #b6e092; width: 90%;"> 
+                                ‎  Trazable
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div style="background-color: #37502a;"> ‎ ‎ ‎ {{distribucionErrorNumero.correcto}}</div>
+                                    <div style="background-color: #50763c;"> ‎ ‎ ‎ {{distribucionErrorNumero.inequivoco}}</div>
+                                    <div style="background-color: #608928;"> ‎ ‎ ‎ {{distribucionErrorNumero.completo}}</div>
+                                    <div style="background-color: #2c9d54;"> ‎ ‎ ‎ {{distribucionErrorNumero.consistente}}</div>
+                                    <div style="background-color: #86b858;"> ‎ ‎ ‎ {{distribucionErrorNumero.importante}}</div>
+                                    <div style="background-color: #6be06d;"> ‎ ‎ ‎ {{distribucionErrorNumero.estable}}</div>
+                                    <div style="background-color: #8fe06d;"> ‎ ‎ ‎ {{distribucionErrorNumero.comprobable}}</div>
+                                    <div style="background-color: #b6e06d;"> ‎ ‎ ‎ {{distribucionErrorNumero.identificable}}</div>
+                                    <div style="background-color: #b6e092;"> ‎ ‎ ‎ {{distribucionErrorNumero.trazable}}</div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div style="background-color: #37502a;"> ‎ {{distribucionErrorPorcentaje.correcto}}%</div>
+                                    <div style="background-color: #50763c;"> ‎ {{distribucionErrorPorcentaje.inequivoco}}%</div>
+                                    <div style="background-color: #608928;"> ‎ {{distribucionErrorPorcentaje.completo}}%</div>
+                                    <div style="background-color: #2c9d54;"> ‎ {{distribucionErrorPorcentaje.consistente}}%</div>
+                                    <div style="background-color: #86b858;"> ‎ {{distribucionErrorPorcentaje.importante}}%</div>
+                                    <div style="background-color: #6be06d;"> ‎ {{distribucionErrorPorcentaje.estable}}%</div>
+                                    <div style="background-color: #8fe06d;"> ‎ {{distribucionErrorPorcentaje.comprobable}}%</div>
+                                    <div style="background-color: #b6e06d;"> ‎ {{distribucionErrorPorcentaje.identificable}}%</div>
+                                    <div style="background-color: #b6e092;"> ‎ {{distribucionErrorPorcentaje.trazable}}%</div>
+                                </div>
+                            </div>                            
+                        </div>                             
+                        
+                        <!--CARACTERISTICAS CON ERROR-->
+                        <div class="col-md-2">
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div style="background-color: #d9341a;"> ‎ {{distribucionErrorPorcentaje.incorrecto}}%</div>
+                                    <div style="background-color: #d95f22;"> ‎ {{distribucionErrorPorcentaje.ambiguo}}%</div>
+                                    <div style="background-color: #da8a2d;"> ‎ {{distribucionErrorPorcentaje.incompleto}}%</div>
+                                    <div style="background-color: #dcb538;"> ‎ {{distribucionErrorPorcentaje.debil}}%</div>
+                                    <div style="background-color: #dcb568;"> ‎ {{distribucionErrorPorcentaje.intrascendente}}%</div>
+                                    <div style="background-color: #ddc76a;"> ‎ {{distribucionErrorPorcentaje.inestable}}%</div>
+                                    <div style="background-color: #dee044;"> ‎ {{distribucionErrorPorcentaje.noComprobable}}%</div>
+                                    <div style="background-color: #dee06e;"> ‎ {{distribucionErrorPorcentaje.noIdentificable}}%</div>
+                                    <div style="background-color: #dee092;"> ‎ {{distribucionErrorPorcentaje.noTrazable}}%</div>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{distribucionErrorNumero.incorrecto}}</div>
+                                    <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{distribucionErrorNumero.ambiguo}}</div>
+                                    <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{distribucionErrorNumero.incompleto}}</div>
+                                    <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{distribucionErrorNumero.debil}}</div>
+                                    <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{distribucionErrorNumero.intrascendente}}</div>
+                                    <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{distribucionErrorNumero.inestable}}</div>
+                                    <div style="background-color: #dee044;"> ‎ ‎ ‎ {{distribucionErrorNumero.noComprobable}}</div>
+                                    <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{distribucionErrorNumero.noIdentificable}}</div>
+                                    <div style="background-color: #dee092;"> ‎ ‎ ‎ {{distribucionErrorNumero.noTrazable}}</div>
+                                </div>
+                            </div>                            
+                        </div> 
+                        <div class="col-md-3">
+                            <br>
+                            <div style="background-color: #d9341a; width: 35%; margin-left: 45%;"> 
+                                ‎  Incorrecto
+                            </div>
+                            <div style="background-color: #d95f22; width: 41%;margin-left: 39%;"> 
+                                ‎  Ambiguo
+                            </div>
+                            <div style="background-color: #da8a2d; width: 47%;margin-left: 33%;"> 
+                                ‎  Incompleto
+                            </div>
+                            <div style="background-color: #dcb538; width: 53%;margin-left: 27%;"> 
+                                ‎  Débil
+                            </div>
+                            <div style="background-color: #dcb568; width: 59%;margin-left: 21%;"> 
+                                ‎  Intrascendente
+                            </div>
+                            <div style="background-color: #ddc76a; width: 65%;margin-left: 15%;"> 
+                                ‎  Inestable
+                            </div>
+                            <div style="background-color: #dee044; width: 72%;margin-left: 8%;"> 
+                                ‎  NO Comprobable
+                            </div>
+                            <div style="background-color: #dee06e; width: 80%;margin-left: 0%;"> 
+                                ‎  NO Identificable
+                            </div>
+                            <div style="background-color: #dee092; width: 90%;margin-left: -10%;"> 
+                                ‎  NO Trazable
+                            </div>
+                        </div> 
+                    </div> 
+                    <br><br>                    
+                </div> 
+                
+            </div>
+            
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#segundaGrafica" aria-expanded="false" aria-controls="segundaGrafica">
+                    DISTRIBUCIÓN DE ERRORES EN EL NIVEL DE ADECUACIÓN PARA TODOS LOS LOS REQUISITOS 
+                </button>
+            </div> 
+            <div>
+                <br>
+            </div>            
+            <div class="collapse" id="segundaGrafica">
+                <div class="row">
+                    <!--CAUSE ERRO DDE-->
+                    <div class="col-md-2" style="margin-left: 3%;">
+                        <h3>CAUSA DE ERROR DDE</h3>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{TodosErrorDDE.incorrecto}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{TodosErrorDDE.ambiguo}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{TodosErrorDDE.incompleto}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{TodosErrorDDE.debil}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{TodosErrorDDE.intrascendente}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{TodosErrorDDE.inestable}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{TodosErrorDDE.noComprobable}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{TodosErrorDDE.noIdentificable}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{TodosErrorDDE.noTrazable}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{TodosPorcErrorDDE.incorrecto}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{TodosPorcErrorDDE.ambiguo}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{TodosPorcErrorDDE.incompleto}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{TodosPorcErrorDDE.debil}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{TodosPorcErrorDDE.intrascendente}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{TodosPorcErrorDDE.inestable}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{TodosPorcErrorDDE.noComprobable}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{TodosPorcErrorDDE.noIdentificable}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{TodosPorcErrorDDE.noTrazable}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+
+                    <!--CAUSE ERROR DII-->
+                    <div class="col-md-2" style="margin-left: -3%;">
+                        <h3>CAUSA DE ERROR DII</h3>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{TodosErrorDII.incorrecto}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{TodosErrorDII.ambiguo}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{TodosErrorDII.incompleto}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{TodosErrorDII.debil}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{TodosErrorDII.intrascendente}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{TodosErrorDII.inestable}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{TodosErrorDII.noComprobable}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{TodosErrorDII.noIdentificable}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{TodosErrorDII.noTrazable}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{TodosPorcErrorDII.incorrecto}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{TodosPorcErrorDII.ambiguo}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{TodosPorcErrorDII.incompleto}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{TodosPorcErrorDII.debil}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{TodosPorcErrorDII.intrascendente}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{TodosPorcErrorDII.inestable}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{TodosPorcErrorDII.noComprobable}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{TodosPorcErrorDII.noIdentificable}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{TodosPorcErrorDII.noTrazable}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+
+                    <!--CAUSE ERROR VAR-->
+                    <div class="col-md-2" style="margin-left: -3%;">
+                        <h3>CAUSA DE ERROR VAR</h3>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{TodosErrorVAR.incorrecto}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{TodosErrorVAR.ambiguo}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{TodosErrorVAR.incompleto}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{TodosErrorVAR.debil}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{TodosErrorVAR.intrascendente}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{TodosErrorVAR.inestable}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{TodosErrorVAR.noComprobable}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{TodosErrorVAR.noIdentificable}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{TodosErrorVAR.noTrazable}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{TodosPorcErrorVAR.incorrecto}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{TodosPorcErrorVAR.ambiguo}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{TodosPorcErrorVAR.incompleto}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{TodosPorcErrorVAR.debil}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{TodosPorcErrorVAR.intrascendente}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{TodosPorcErrorVAR.inestable}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{TodosPorcErrorVAR.noComprobable}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{TodosPorcErrorVAR.noIdentificable}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{TodosPorcErrorVAR.noTrazable}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                </div> 
+                <br><br>                    
+            </div>  
+
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#terceraGrafica" aria-expanded="false" aria-controls="terceraGrafica">
+                    DISTRIBUCIÓN DE ERRORES PARA TODOS LOS REQUISITOS
+                </button>
+            </div> 
+            <div>
+                <br>
+            </div>            
+            <div class="collapse" id="terceraGrafica">
+                <div class="row">
+                    <!--GRAFICA-->
+                    <div class="col-md-6" style="margin-left: 8%;">
+                        <br>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            ‎  Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <!--ERROR EIE-->
+                    <div class="col-md-2">
+                        <h3>ERROR EIE</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{TodosError.incompletoEIE}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{TodosError.ambiguoEIE}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{TodosError.incompletoEIE}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{TodosError.debilEIE}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{TodosError.noIdentificableEIE}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{TodosError.noTrazableEIE}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{TodosPorcError.incorrecto}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{TodosPorcError.ambiguo}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{TodosPorcError.incompleto}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{TodosPorcError.debil}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ 0%</div>
+                                <div style="background-color: #ddc76a;"> ‎ 0%</div>
+                                <div style="background-color: #dee044;"> ‎ 0%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{TodosPorcError.noIdentificable}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{TodosPorcError.noTrazable}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                    <!--ERROR MCC-->
+                    <div class="col-md-2">
+                        <h3>ERROR MCC</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{TodosError.intrascendenteMCC}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{TodosError.inestableMCC}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{TodosError.noComprobableMCC}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ 0 </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ 0%</div>
+                                <div style="background-color: #d95f22;"> ‎ 0%</div>
+                                <div style="background-color: #da8a2d;"> ‎ 0%</div>
+                                <div style="background-color: #dcb538;"> ‎ 0%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{TodosPorcError.intrascendente}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{TodosPorcError.inestable}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{TodosPorcError.noComprobable}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ 0%</div>
+                                <div style="background-color: #dee092;"> ‎ 0%</div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>     
+                <br><br>                  
+            </div>  
+
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#cuartaGrafica" aria-expanded="false" aria-controls="cuartaGrafica">
+                    DISTRIBUCIÓN DE ERRORES Y CAUSA DE ERROR POR CARACTERÍSTICA PARA TODOS LOS REQUISITOS EIE																																					
+
+                </button>
+            </div> 
+            <div>
+                <br>
+            </div>            
+            <div class="collapse" id="cuartaGrafica">
+                <div class="row">
+                    <!--GRAFICA-->
+                    <div class="col-md-5" style="margin-left: 8%;">
+                        <br>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            ‎  Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <!--ERROR EIE / DDE -->
+                    <div class="col-md-2">
+                        <h3>ERROR EIE / DDE </h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{CauseError.incompletoDDE}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{CauseError.ambiguoDDE}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{CauseError.incompletoDDE}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{CauseError.debilDDE}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{CauseError.noIdentificableDDE}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{CauseError.noTrazableDDE}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{CauseErrorPorc.ambiguoDDE}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{CauseErrorPorc.debilDDE}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ 0%</div>
+                                <div style="background-color: #ddc76a;"> ‎ 0%</div>
+                                <div style="background-color: #dee044;"> ‎ 0%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{CauseErrorPorc.noIdentificableDDE}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{CauseErrorPorc.noTrazableDDE}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                    <!--ERROR EIE / DII -->
+                    <div class="col-md-2">
+                        <h3>ERROR EIE / DDE </h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{CauseError.incompletoDII}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{CauseError.ambiguoDII}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{CauseError.incompletoDII}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{CauseError.debilDII}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{CauseError.noIdentificableDII}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{CauseError.noTrazableDII}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{CauseErrorPorc.ambiguoDDE}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{CauseErrorPorc.debilDDE}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ 0%</div>
+                                <div style="background-color: #ddc76a;"> ‎ 0%</div>
+                                <div style="background-color: #dee044;"> ‎ 0%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{CauseErrorPorc.noIdentificableDDE}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{CauseErrorPorc.noTrazableDDE}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                    <!--ERROR EIE / VAR -->
+                    <div class="col-md-2">
+                        <h3>ERROR EIE / DDE </h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ {{CauseError.incompletoVAR}}</div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ {{CauseError.ambiguoVAR}}</div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ {{CauseError.incompletoVAR}}</div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ {{CauseError.debilVAR}}</div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ {{CauseError.noIdentificableVAR}}</div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ {{CauseError.noTrazableVAR}}</div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #d95f22;"> ‎ {{CauseErrorPorc.ambiguoDDE}}%</div>
+                                <div style="background-color: #da8a2d;"> ‎ {{CauseErrorPorc.incompletoDDE}}%</div>
+                                <div style="background-color: #dcb538;"> ‎ {{CauseErrorPorc.debilDDE}}%</div>
+                                <div style="background-color: #dcb568;"> ‎ 0%</div>
+                                <div style="background-color: #ddc76a;"> ‎ 0%</div>
+                                <div style="background-color: #dee044;"> ‎ 0%</div>
+                                <div style="background-color: #dee06e;"> ‎ {{CauseErrorPorc.noIdentificableDDE}}%</div>
+                                <div style="background-color: #dee092;"> ‎ {{CauseErrorPorc.noTrazableDDE}}%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                </div> 
+                <br><br>                      
+            </div>
+            
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#quintaGrafica" aria-expanded="false" aria-controls="quintaGrafica">
+                    DISTRIBUCIÓN DE ERRORES Y CAUSA DE ERROR POR CARACTERÍSTICA PARA TODOS LOS REQUISITOS MCC																																					
+
+                </button>
+            </div> 
+            <div>
+                <br>
+            </div>            
+            <div class="collapse" id="quintaGrafica">
+                <div class="row">
+                    <!--GRAFICA-->
+                    <div class="col-md-5" style="margin-left: 8%;">
+                        <br>
+                        <br>
+                        <div style="background-color: #d9341a; width: 35%;"> 
+                            ‎  Incorrecto
+                        </div>
+                        <div style="background-color: #d95f22; width: 41%;"> 
+                            ‎  Ambiguo
+                        </div>
+                        <div style="background-color: #da8a2d; width: 47%;"> 
+                            ‎  Incompleto
+                        </div>
+                        <div style="background-color: #dcb538; width: 53%;"> 
+                            ‎  Débil
+                        </div>
+                        <div style="background-color: #dcb568; width: 59%;"> 
+                            ‎  Instrascendente
+                        </div>
+                        <div style="background-color: #ddc76a; width: 65%;"> 
+                            ‎  Inestable
+                        </div>
+                        <div style="background-color: #dee044; width: 72%;"> 
+                            ‎  NO Comprobable
+                        </div>
+                        <div style="background-color: #dee06e; width: 80%;"> 
+                            ‎  NO Identificable
+                        </div>
+                        <div style="background-color: #dee092; width: 90%;"> 
+                            ‎  NO Trazable
+                        </div>
+                    </div>
+                    <!--ERROR MCC / DDE-->
+                    <div class="col-md-2">
+                        <h3>ERROR MCC / DDE</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{CauseError.intrascendenteDDE}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{CauseError.inestableDDE}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{CauseError.noComprobableDDE}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ 0 </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ 0%</div>
+                                <div style="background-color: #d95f22;"> ‎ 0%</div>
+                                <div style="background-color: #da8a2d;"> ‎ 0%</div>
+                                <div style="background-color: #dcb538;"> ‎ 0%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{CauseErrorPorc.intrascendenteDDE}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{CauseErrorPorc.inestableDDE}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{CauseErrorPorc.noComprobableDDE}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ 0%</div>
+                                <div style="background-color: #dee092;"> ‎ 0%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                    <!--ERROR MCC / DII-->
+                    <div class="col-md-2">
+                        <h3>ERROR MCC / DII</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{CauseError.intrascendenteDII}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{CauseError.inestableDII}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{CauseError.noComprobableDII}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ 0 </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ 0%</div>
+                                <div style="background-color: #d95f22;"> ‎ 0%</div>
+                                <div style="background-color: #da8a2d;"> ‎ 0%</div>
+                                <div style="background-color: #dcb538;"> ‎ 0%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{CauseErrorPorc.intrascendenteDDE}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{CauseErrorPorc.inestableDDE}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{CauseErrorPorc.noComprobableDDE}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ 0%</div>
+                                <div style="background-color: #dee092;"> ‎ 0%</div>
+                            </div>
+                        </div>                            
+                    </div> 
+                    <!--ERROR MCC / VAR-->
+                    <div class="col-md-2">
+                        <h3>ERROR MCC / VAR</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div style="background-color: #d9341a;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #d95f22;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #da8a2d;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb538;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dcb568;"> ‎ ‎ ‎ {{CauseError.intrascendenteVAR}}</div>
+                                <div style="background-color: #ddc76a;"> ‎ ‎ ‎ {{CauseError.inestableVAR}}</div>
+                                <div style="background-color: #dee044;"> ‎ ‎ ‎ {{CauseError.noComprobableVAR}}</div>
+                                <div style="background-color: #dee06e;"> ‎ ‎ ‎ 0 </div>
+                                <div style="background-color: #dee092;"> ‎ ‎ ‎ 0 </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background-color: #d9341a;"> ‎ 0%</div>
+                                <div style="background-color: #d95f22;"> ‎ 0%</div>
+                                <div style="background-color: #da8a2d;"> ‎ 0%</div>
+                                <div style="background-color: #dcb538;"> ‎ 0%</div>
+                                <div style="background-color: #dcb568;"> ‎ {{CauseErrorPorc.intrascendenteDDE}}%</div>
+                                <div style="background-color: #ddc76a;"> ‎ {{CauseErrorPorc.inestableDDE}}%</div>
+                                <div style="background-color: #dee044;"> ‎ {{CauseErrorPorc.noComprobableDDE}}%</div>
+                                <div style="background-color: #dee06e;"> ‎ 0%</div>
+                                <div style="background-color: #dee092;"> ‎ 0%</div>
+                            </div>
+                        </div>                            
+                    </div>   
+                </div>  
+                <br><br>                    
+            </div>  
+        </div>           
+    </section>
+</body>

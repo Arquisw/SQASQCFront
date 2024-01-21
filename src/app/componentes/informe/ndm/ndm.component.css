@@ -1,7 +1,7 @@
 .body{    
     background-color: #292d33;
-    color: white;  
-    height: 100vh;
+    color: white; 
+    min-height: 100vh;
 }
 
 .titulo{
@@ -10,10 +10,10 @@
     color: white;
 }
 .contenido {
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
 }
-.col-md-4{    
-  margin-top: 4%;
+.col-md-5{    
+  margin-left: 4%;
 }
 
 .list-group-item-action{    
@@ -43,6 +43,10 @@ hr{
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+.primeraGrafica{
+    margin-left: 8%;
 }
 
 img
@@ -58,6 +62,15 @@ img
 .breadcrumb{
     margin-left: 300px;
 }
+
+.texto-vertical-2 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+
+
+
 
 
 

@@ -14,11 +14,9 @@
         <div class="row">
             <div class="card" style="width: 45rem;" *ngFor="let requisito of requisitos | paginate : {itemsPerPage:10, currentPage: paginaActual}">
                 <div class="card-body" [routerLink]="['/requisitos/detalle', requisito.requirementId]">
-                    <h5 class="card-title">{{requisito.name}}</h5>
+                    <h4 class="card-title">{{requisito.name}}</h4>
                     <h6 class="card-subtitle mb-2" >tipo de requisito:{{requisito.typeRequirement}}</h6>
                     <h6 class="card-text" >{{requisito.description}}</h6>
-                    <h6 class="card-text" >Id:{{requisito.requirementId}}</h6>
-                    <h6 class="card-text">Id proyecto: {{requisito.projectId}}</h6>
                     <a [routerLink]="['/requisitos/detalle/', requisito.requirementId]"></a>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button type="button" class="btn btn-light" [routerLink]="['/requisitos/calificar/', requisito.requirementId]">Calificar</button>
@@ -27,6 +25,6 @@
                 </div>
             </div>  
         </div> 
-        <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
+        <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="paginaActual = $event"></pagination-controls>
     </section>
 </body> 

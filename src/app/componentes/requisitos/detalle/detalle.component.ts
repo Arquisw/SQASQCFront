@@ -25,8 +25,7 @@ export class DetalleComponent {
   caracteristicas :CaracteristicaInterface[] = [
   ];
 
-  operaciones : Array<number> = [];
-  
+  operaciones !: operacionInterface;
   titulos : Array<string> = [];
 
   errorMCC : number =0;
@@ -35,7 +34,7 @@ export class DetalleComponent {
   requisitos:RequisitoInterface[]=[];
   req : RequisitoInterface = {
     requirementId:1,
-    projectId:1,
+    projectId:3,
     name: '',
     description: '',
     typeRequirement : ''
@@ -63,8 +62,7 @@ export class DetalleComponent {
     this.activatedRoute?.params.
     pipe(
       switchMap( 
-        ({id}) => this.requisitoService.obtenerOperaciones(id)
-       
+        ({id}) => this.requisitoService.obtenerOperaciones(id)       
         )
     ).subscribe(resp => this.operaciones=resp) 
 
@@ -81,6 +79,20 @@ export class DetalleComponent {
         ({id}) => this.requisitoService.obtenerOperacionError("2",id)       
         )
     ).subscribe(resp => this.errorMCC=resp) 
+
+    this.activatedRoute?.params.
+    pipe(
+      switchMap( 
+        ({id}) => this.requisitoService.obtenerCantidadEIE(id)     
+        )
+    ).subscribe(resp => this.errorEIE=resp) 
+
+    this.activatedRoute?.params.
+    pipe(
+      switchMap( 
+        ({id}) => this.requisitoService.obtenerCantidadMCC(id)     
+        )
+    ).subscribe(resp => this.errorMCC=resp) 
     
   }
 
@@ -88,16 +100,7 @@ export class DetalleComponent {
 
   calcularOperaciones(){    
  
-    this.titulos = [
-      "Level adecuacy:" + this.operaciones[0].toFixed(2),
-      "evaluatedCharacteristics:" + this.operaciones[1].toFixed(2),
-      "levelWeightScore:" + this.operaciones[2].toFixed(2),
-      "maximunScore:"+ this.operaciones[3].toFixed(2),
-      "calculateWeightAverage:"+ this.operaciones[4].toFixed(2),
-      "Errores" ,
-      "EIE: " + this.errorEIE,
-      "MCC: " + this.errorMCC
-    ]      
+    console.log(this.operaciones)   
   }
 
 }

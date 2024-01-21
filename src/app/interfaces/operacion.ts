@@ -1,8 +1,22 @@
 export interface operacionInterface{    
+    operationId?:                       number,
+    requirementId?:                     number,
     levelAdecuacy:                      number,
     evaluatedCharacteristics:           number,
     levelWeightScore:                   number,
-    maximunScore:                       number,
-    calculateWeightAverage:             number
+    maximumScore:                       number,
+    calculatedWeightAverage:             number
 
+}
+
+export interface operacionRangoInterface {
+    bajoMedio: number,
+    altoAlto: number,
+    bajoAlto: number,
+    altoBajo: number,
+    bajoBajo: number,
+    altoMedio: number,
+    medioAlto: number,
+    medioMedio: number,
+    medioBajo: number
 }

@@ -8,6 +8,8 @@ import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service
 import { alert } from 'src/app/navbar/alert/alert'
 import { ErrorInterface } from 'src/app/interfaces/error';
 import { waitForAsync } from '@angular/core/testing';
+import { operacionInterface } from 'src/app/interfaces/operacion';
+import { OperacionService } from 'src/app/servicio/operacion/operacion.service';
 
 @Component({
   selector: 'app-calificar',
@@ -26,6 +28,7 @@ export class CalificarComponent {
       "var":false
     }
   
+  operaciones !: operacionInterface;
 
   caracteristicas: CaracteristicaInterface[] = []
 
@@ -42,7 +45,7 @@ export class CalificarComponent {
 
   } 
 
-  constructor(private requisitoService: RequisitosService,private alert: alert, private activatedRoute?:ActivatedRoute, private caracteristicaService?: CaracteristicaService ){}
+  constructor(private requisitoService: RequisitosService, private operacionService: OperacionService,private alert: alert, private activatedRoute?:ActivatedRoute, private caracteristicaService?: CaracteristicaService ){}
 
   ngOnInit(): void {     
     
@@ -58,6 +61,13 @@ export class CalificarComponent {
         ({id}) => this.caracteristicaService!.getCaracteristicaById(id)
         )
     ).subscribe(resp => this.caracteristicas=resp);
+
+    this.activatedRoute?.params.
+    pipe(
+      switchMap( 
+        ({id}) => this.requisitoService!.obtenerOperaciones(id)
+        )
+    ).subscribe(resp => this.operaciones=resp);
   } 
 
   calificar():void{
@@ -90,13 +100,14 @@ export class CalificarComponent {
         this.caracteristicaService?.updateGrade(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.caracteristicas[i].gradeCharacteristic);
         this.caracteristicaService?.updateError(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.error);
       } 
-
+      this.operacionService.actualizarOperaciones(this.req.requirementId!,this.operaciones);
       this.alert.successTimer("Exito!!","Se califico correctamente");      
       
       
     }  
     console.log(this.req)
     console.log(this.caracteristicas);
+    console.log(this.operaciones);
   }
   
 

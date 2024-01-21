@@ -5,7 +5,7 @@ import { firstValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
-import { operacionInterface } from 'src/app/interfaces/operacion';
+import { operacionInterface, operacionRangoInterface } from 'src/app/interfaces/operacion';
 
 
 @Injectable({
@@ -17,8 +17,8 @@ export class RequisitosService {
 
   constructor(private http: HttpClient) { }
 
-  getRequerimiento(){
-    return this.http.get<RequisitoInterface[]>(`${this.url}/requirements`).pipe(catchError(this.errorHandler));
+  getRequerimiento(idProyecto: number){
+    return this.http.get<RequisitoInterface[]>(`${this.url}/requirements?projectId=${idProyecto}`).pipe(catchError(this.errorHandler));
   }
 
   agregarRequerimiento(requisito:RequisitoInterface):Promise<RequisitoInterface>{
@@ -33,12 +33,22 @@ export class RequisitosService {
     return firstValueFrom(this.http.put<RequisitoInterface>(`${this.url}/requirements${requisito.requirementId}`,requisito));
   }
 
-  obtenerOperaciones(id:string):Promise<number[]>{
-    return firstValueFrom(this.http.get<number[]>(`http://localhost:8080/characteristics/all-operations/${id}`));
+  obtenerOperaciones(id:string):Promise<operacionInterface>{
+    return firstValueFrom(this.http.get<operacionInterface>(`http://localhost:8080/characteristics/all-operations/${id}`));
   }
+
+  
 
   obtenerOperacionError(idError:string,idReq:string):Promise<number>{
     return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/${idError}/${idReq}`));
+  } 
+
+  obtenerCantidadEIE(idReq:string):Promise<number>{
+    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/eie/${idReq}`));
+  }
+  
+  obtenerCantidadMCC(idReq:string):Promise<number>{
+    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/mcc/${idReq}`));
   }
 
   errorHandler(error: HttpErrorResponse){

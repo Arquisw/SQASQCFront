@@ -15,19 +15,21 @@
         <div class="row">
             <div class="col-4">
                 <br><br>
-                <h2>Titulo: {{req.name}}</h2>            
+                <h2 style="color: #026f35;">Titulo: {{req.name}}</h2>            
                 <h3>Tipo de requisito: {{req.typeRequirement}}</h3>            
-                <h3>Descripción: {{req.description}}</h3>            
-                <h3>Id: {{req.requirementId}}</h3>                
+                <h3>Descripción: {{req.description}}</h3>                
                 
                 <br>
-                <h3 *ngFor="let titulo of titulos">
-                  {{titulo}}
-                </h3>
+                <h2 style="color: #026f35;">Nivel de adecuación</h2>
+                <h3>Puntaje Máximo: {{operaciones.maximumScore}}</h3>
+                <h3>Puntaje Ponderado : {{operaciones.levelWeightScore}}</h3>
+                <h3>Total puntaje promedio: {{operaciones.levelAdecuacy}}</h3>
+                <h3>Total Puntaje promedio ponderado: {{operaciones.calculatedWeightAverage}}</h3>  
+                <br>
+                <h2 style="color: #026f35;">Distribución de Error</h2>
+                <h3>Error EIE: {{errorEIE}}</h3>
+                <h3>Error MCC: {{errorMCC}}</h3>
                 <br><br>
-                <div class=" col-6">
-                  <button type="button" class="btn btn-success btn-lg" (click)="calcularOperaciones()">Realizar calculos</button>
-                </div>
             </div>
 
             <div class="col-7">

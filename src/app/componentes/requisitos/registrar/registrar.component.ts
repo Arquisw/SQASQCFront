@@ -18,7 +18,7 @@ export class RegistrarComponent implements OnInit{
   mensajeError="";
 
   req : RequisitoInterface = {
-    projectId: 1,
+    projectId: 3,
     name: '',
     description: '',
     typeRequirement : ''
