@@ -18,7 +18,7 @@ export class RegistrarComponent implements OnInit{
   mensajeError="";
 
   req : RequisitoInterface = {
-    projectId: 3,
+    projectId: 1,
     name: '',
     description: '',
     typeRequirement : ''
@@ -43,6 +43,7 @@ export class RegistrarComponent implements OnInit{
     this.req.name=formularioRequisito.value.nombre;
     this.req.description=formularioRequisito.value.descripcion;
     this.req.typeRequirement=formularioRequisito.value.tipoRequisito;
+    console.log(this.req);
     this.requerimiento.agregarRequerimiento(this.req)
       .then( 
         resp => {this.req=resp,        
@@ -55,6 +56,8 @@ export class RegistrarComponent implements OnInit{
         this.alert.error(constantes.SW_LO_SENTIMOS,err.error.humanMessage)}
       )
     }
+
+    
    
 
 }

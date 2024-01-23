@@ -1,28 +1,32 @@
 .nav-link, .modal-title, .dropdown-item
-{
-    
+{    
   font-size: 1.2rem;
   cursor: pointer;
 }
 
-.dropdown-item:hover{
-    color: #026f35;
-    background-color: #292d33;
-}
+
 
 .nav-item:hover{
     background-color: #026f35;     
     color: white;
 }
 
+.informe{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .navitem{
     margin-right: 10%;    
 }
 
-
+.dropdown-item:hover{
+  color: #026f35;
+  background-color: #292d33;
+}
 .dropdown-item:active, .dropdown-item:hover{
-     background-color: #026f35;     
-    color: white;
+  background-color: #026f35;     
+  color: white;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -31,7 +35,5 @@
 
 li
 {
-  margin-right: 15px;
+  margin-right: 10px;
 }
-
-

@@ -11,6 +11,7 @@ import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service
 export class ConsultarComponent implements OnInit{
 
   paginaActual:number = 1;
+  acceso : boolean = false;
   requisitos:RequisitoInterface[]=[];
   req : RequisitoInterface = {
     projectId:1,

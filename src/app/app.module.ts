@@ -20,6 +20,7 @@ import { DistribucionErrorComponent } from './componentes/informe/distribucion-e
 import { DistErrorFuncComponent } from './componentes/informe/dist-error-func/dist-error-func.component';
 import { DistErrorNoFuncComponent } from './componentes/informe/dist-error-no-func/dist-error-no-func.component';
 import { NdmComponent } from './componentes/informe/ndm/ndm.component';
+import { FooterComponent } from './navbar/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NdmComponent } from './componentes/informe/ndm/ndm.component';
     DistribucionErrorComponent,
     DistErrorFuncComponent,
     DistErrorNoFuncComponent,
-    NdmComponent
+    NdmComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

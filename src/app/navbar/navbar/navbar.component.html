@@ -1,9 +1,11 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
-    <div class="navitem">
+  <a class="navbar-brand" href="#"><img src="../../../../assets/logo-arquisw.png" style="width: 80px; height: 80px; margin-left: -1200%;" alt="Imagen del Logo de ArquiSW"></a>
+    <div class="navitem">  
+          
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarText">
+      <div class="collapse navbar-collapse" id="navbarText">      
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="/inicio">Inicio</a>
@@ -18,9 +20,12 @@
               <li><a class="dropdown-item" routerLink="/requisitos/consultar">Calificar</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <div [ngClass]="{'informe':restriccion}">
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="/informe">Informes</a>
           </li>
+          </div>          
+          
           <li class="nav-item dropdown">
             <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Nosotros
