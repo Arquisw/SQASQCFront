@@ -10,6 +10,7 @@ import { ErrorInterface } from 'src/app/interfaces/error';
 import { waitForAsync } from '@angular/core/testing';
 import { operacionInterface } from 'src/app/interfaces/operacion';
 import { OperacionService } from 'src/app/servicio/operacion/operacion.service';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 
 @Component({
   selector: 'app-calificar',
@@ -82,9 +83,9 @@ export class CalificarComponent {
       }
     }
     if(this.formularioValido!=true){
-      this.alert.error("Lo sentimos","No se pudo calificar. Recuerde que la nota debe estar entre 0.1 y 9");
+      this.alert.error(constantes.SW_LO_SENTIMOS,constantes.SW_ERROR_NOTA);
     }else if (this.errorValido!=true){  
-      this.alert.error("Lo sentimos","No se pudo calificar. Recuerde que si la nota no es mayor a 8 debe calificar el tipo de error");    
+      this.alert.error(constantes.SW_LO_SENTIMOS,constantes.SW_ERROR_TIPO_ERROR);    
     }else{  
       for (let i = 0; i < this.caracteristicas.length; i++){ 
         if(this.caracteristicas[i].gradeCharacteristic>8){
@@ -95,19 +96,13 @@ export class CalificarComponent {
           this.error.dde=this.caracteristicas[i].dde;
           this.error.dii=this.caracteristicas[i].dii;
           this.error.var=this.caracteristicas[i].var; 
-        }   
-        console.log(this.error);        
+        }         
         this.caracteristicaService?.updateGrade(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.caracteristicas[i].gradeCharacteristic);
         this.caracteristicaService?.updateError(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.error);
       } 
       this.operacionService.actualizarOperaciones(this.req.requirementId!,this.operaciones);
-      this.alert.successTimer("Exito!!","Se califico correctamente");      
-      
-      
+      this.alert.successTimer(constantes.SW_BIEN_HECHO,constantes.SW_CALIFICACION_EXITOSA); 
     }  
-    console.log(this.req)
-    console.log(this.caracteristicas);
-    console.log(this.operaciones);
   }
   
 

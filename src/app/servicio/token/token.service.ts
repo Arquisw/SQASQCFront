@@ -7,6 +7,8 @@ import { environment } from "src/environments/environment";
 export class TokenService {
   private readonly TOKEN_ENDPOINT: string = '/token';
   private readonly ACTUALIZAR_TOKEN_ENDPOINT: string = '/actualizar';
+
+  url = environment.url;
  
 
   constructor(private http: HttpClient) { }
@@ -17,6 +19,6 @@ export class TokenService {
   }
 
   consumirServicioActualizarToken(): Observable<void> {
-    return this.http.get<void>(`http://localhost:8080/api/token/actualizar`);
+    return this.http.get<void>(`${this.url}/api/token/${this.ACTUALIZAR_TOKEN_ENDPOINT}`);
   }
 }

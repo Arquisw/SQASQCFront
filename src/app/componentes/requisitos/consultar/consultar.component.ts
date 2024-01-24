@@ -24,7 +24,7 @@ export class ConsultarComponent implements OnInit{
   constructor(private requisitoService: RequisitosService, private activatedRoute?:ActivatedRoute){}
   
   ngOnInit(): void {    
-    this.requisitoService.getRequerimiento(this.req.projectId).
+    this.requisitoService.getRequerimiento(parseInt(localStorage.getItem('projectId')!)).
     subscribe(requisitos => this.requisitos = requisitos);
   }
 

@@ -22,7 +22,6 @@ export class RegistrarComponent implements OnInit{
     name: '',
     description: '',
     typeRequirement : ''
-
   }
 
   constructor(private requerimiento : RequisitosService, private alert: alert, private constantes?:constantes, private activatedRoute?:ActivatedRoute) { }
@@ -47,7 +46,7 @@ export class RegistrarComponent implements OnInit{
     this.requerimiento.agregarRequerimiento(this.req)
       .then( 
         resp => {this.req=resp,        
-        this.alert.success(constantes.SW_BIEN_HECHO,constantes.SW_GUARDADO),
+        this.alert.successTimer(constantes.SW_BIEN_HECHO,constantes.SW_GUARDADO),
         formularioRequisito.resetForm()
         
       },

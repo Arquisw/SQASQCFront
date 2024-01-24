@@ -13,7 +13,7 @@ import { operacionInterface, operacionRangoInterface } from 'src/app/interfaces/
 })
 export class RequisitosService {
 
-  private url:string = environment.url2
+  private url:string = environment.url
 
   constructor(private http: HttpClient) { }
 
@@ -34,21 +34,20 @@ export class RequisitosService {
   }
 
   obtenerOperaciones(id:string):Promise<operacionInterface>{
-    return firstValueFrom(this.http.get<operacionInterface>(`http://localhost:8080/characteristics/all-operations/${id}`));
+    return firstValueFrom(this.http.get<operacionInterface>(`${this.url}/characteristics/all-operations/${id}`));
   }
-
   
 
   obtenerOperacionError(idError:string,idReq:string):Promise<number>{
-    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/${idError}/${idReq}`));
+    return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/${idError}/${idReq}`));
   } 
 
   obtenerCantidadEIE(idReq:string):Promise<number>{
-    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/eie/${idReq}`));
+    return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/eie/${idReq}`));
   }
   
   obtenerCantidadMCC(idReq:string):Promise<number>{
-    return firstValueFrom(this.http.get<number>(`http://localhost:8080/type-errors/mcc/${idReq}`));
+    return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/mcc/${idReq}`));
   }
 
   errorHandler(error: HttpErrorResponse){
