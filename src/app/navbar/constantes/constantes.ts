@@ -19,5 +19,9 @@ export abstract class constantes{
     static readonly SW_REQUIREMENTS: string = '/requirements';
     static readonly FUNCIONAL : string = "Funcional";
     static readonly NO_FUNCIONAL: string = "NO Funcional";
+    static readonly MCC : string ="2";
+    static readonly EIE : string ="1";
+    static readonly VACIO: string ="";
+    static readonly PROJECT_ID : string = 'projectId';
 
 }

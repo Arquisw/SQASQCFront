@@ -21,10 +21,12 @@
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button type="button" [disabled]="acceso" class="btn btn-light" [routerLink]="['/requisitos/calificar/', requisito.requirementId]">Calificar</button>
                         <button type="button" class="btn btn-light" [routerLink]="['/requisitos/detalle/', requisito.requirementId]">Detalles</button>
-                      </div>                                       
+                    </div>                                       
                 </div>
-            </div>  
+            </div>
+            <!--<button type="button" *ngFor="let operacion of operaciones | paginate : {itemsPerPage:10, currentPage: paginaActual}" [disabled]="operacion.qualified" class="btn btn-light" [routerLink]="['/requisitos/calificar/', operacion.requirementId]">Calificar</button>-->
         </div> 
+        <button type="button" (click)="mostrar()"></button>
         <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="paginaActual = $event"></pagination-controls>
     </section>
 </body> 

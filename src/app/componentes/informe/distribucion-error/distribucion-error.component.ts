@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { CaracteristicaInterface } from 'src/app/interfaces/caracteristica';
 import { InformeInterface, ErrorCompleto } from 'src/app/interfaces/informe';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 import { CaracteristicaService } from 'src/app/servicio/caracteristica/caracteristica.service';
 
 @Component({
@@ -29,98 +30,22 @@ export class DistribucionErrorComponent {
 
   caracteristicas: CaracteristicaInterface[] = []
 
-  constructor(private caracteristicaService?: CaracteristicaService,private activatedRoute?:ActivatedRoute) {}
-  ngOnInit(): void {    
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCaracteristicaById("1")
-        )
-    ).subscribe(resp => this.caracteristicas=resp);
+  projectId = localStorage.getItem(constantes.PROJECT_ID);
 
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCaracteristicaByIdAndName("","1")
-        )
-    ).subscribe(resp => this.distribucionErrorNumero=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageByCaracteristica("","1")
-        )
-    ).subscribe(resp => this.distribucionErrorPorcentaje=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorDDE("","1")
-        )
-    ).subscribe(resp => this.TodosErrorDDE=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorDDE("","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorDDE=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorDII("","1")
-        )
-    ).subscribe(resp => this.TodosErrorDII=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorDII("","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorDII=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorVAR("","1")
-        )
-    ).subscribe(resp => this.TodosErrorVAR=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorVAR("","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorVAR=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getErrorAllRequieremnt("","1")
-        )
-    ).subscribe(resp => this.TodosError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getPercentageAllRequieremnt("","1")
-        )
-    ).subscribe(resp => this.TodosPorcError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCauseErrorAllRequieremnt("","1")
-        )
-    ).subscribe(resp => this.CauseError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCauseErrorPercentageAllRequieremnt("","1")
-        )
-    ).subscribe(resp => this.CauseErrorPorc=resp);
+  constructor(private caracteristicaService: CaracteristicaService,private activatedRoute?:ActivatedRoute) {}
+  ngOnInit(): void {
+    this.caracteristicaService.getAllCaracteristicaByIdAndName(constantes.VACIO,this.projectId!).then(resp => {this.distribucionErrorNumero=resp})  
+    this.caracteristicaService.getAllPercentageByCaracteristica(constantes.VACIO,this.projectId!).then(resp => {this.distribucionErrorPorcentaje=resp})   
+    this.caracteristicaService.getAllCauseErrorDDE(constantes.VACIO,this.projectId!).then(resp => {this.TodosErrorDDE=resp})
+    this.caracteristicaService.getAllPercentageCauseErrorDDE(constantes.VACIO,this.projectId!).then(resp => {this.TodosPorcErrorDDE=resp})
+    this.caracteristicaService.getAllCauseErrorDII(constantes.VACIO,this.projectId!).then(resp => {this.TodosErrorDII=resp})  
+    this.caracteristicaService.getAllPercentageCauseErrorDII(constantes.VACIO,this.projectId!).then(resp => {this.TodosPorcErrorDII=resp}) 
+    this.caracteristicaService.getAllCauseErrorVAR(constantes.VACIO,this.projectId!).then(resp => {this.TodosErrorVAR=resp})
+    this.caracteristicaService.getAllPercentageCauseErrorVAR(constantes.VACIO,this.projectId!).then(resp => {this.TodosPorcErrorVAR=resp})
+    this.caracteristicaService.getErrorAllRequieremnt(constantes.VACIO,this.projectId!).then(resp => {this.TodosError=resp})
+    this.caracteristicaService.getPercentageAllRequieremnt(constantes.VACIO,this.projectId!).then(resp => {this.TodosPorcError=resp})
+    this.caracteristicaService.getCauseErrorAllRequieremnt(constantes.VACIO,this.projectId!).then(resp => {this.CauseError=resp})    
+    this.caracteristicaService.getCauseErrorPercentageAllRequieremnt(constantes.VACIO,this.projectId!).then(resp => {this.CauseErrorPorc=resp})
   }
 
 }

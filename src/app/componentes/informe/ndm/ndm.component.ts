@@ -51,186 +51,36 @@ export class NdmComponent {
   mediaTotalAltaNoFuncional !: number;
   mediaTotalBajaNoFuncional !: number;
 
+  projectId = localStorage.getItem(constantes.PROJECT_ID);
+
   caracteristicas: CaracteristicaInterface[] = []
 
-  constructor(private requisitoService: RequisitosService,private caracteristicaService?: CaracteristicaService, private operacionService?: OperacionService ,private activatedRoute?:ActivatedRoute) {}
-  ngOnInit(): void {    
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCaracteristicaById("1")
-        )
-    ).subscribe(resp => this.caracteristicas=resp);    
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerPromedioRequisitos(constantes.NO_FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.promedioPonderadoNoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerPromedioRequisitos(constantes.FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.promedioPonderadoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyecto("","1")
-        )
-    ).subscribe(resp => this.mediaProyecto=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyecto(constantes.FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.mediaProyectoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyecto(constantes.NO_FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.mediaProyectoNoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitos("","1")
-        )
-    ).subscribe(resp => this.totalReq=resp);
-    
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitos(constantes.NO_FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.totalReqNoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitos(constantes.FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.totalReqFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyectoAlta("","1")
-        )
-    ).subscribe(resp => this.mediaProyectoAlto=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyectoAlta(constantes.FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.mediaProyectoAltoFuncional=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaProyectoAlta(constantes.NO_FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.mediaProyectoAltoNoFuncional=resp);
-        
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerPromedioRequisitos("","1")
-        )
-    ).subscribe(resp => this.promedioTodosReq=resp);  
-    
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitosTotal("","1")
-        )
-    ).subscribe(resp => this.numeroRequisitos=resp);   
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitosTotal(constantes.FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.numeroRequisitosFuncionales=resp);   
-
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerCantidadRequisitosTotal(constantes.NO_FUNCIONAL,"1")
-        )
-    ).subscribe(resp => this.numeroRequisitosNoFuncionales=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal("","1",0)
-        )
-    ).subscribe(resp => this.mediaTotal=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal("","1",1)
-        )
-    ).subscribe(resp => this.mediaTotalAlta=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal("","1",2)
-        )
-    ).subscribe(resp => this.mediaTotalBaja=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.FUNCIONAL,"1",0)
-        )
-    ).subscribe(resp => this.mediaTotalFuncional=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.FUNCIONAL,"1",1)
-        )
-    ).subscribe(resp => this.mediaTotalAltaFuncional=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.FUNCIONAL,"1",2)
-        )
-    ).subscribe(resp => this.mediaTotalBajaFuncional=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.NO_FUNCIONAL,"1",0)
-        )
-    ).subscribe(resp => this.mediaTotalNoFuncional=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.NO_FUNCIONAL,"1",1)
-        )
-    ).subscribe(resp => this.mediaTotalAltaNoFuncional=resp); 
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.operacionService!.obtenerMediaTotal(constantes.NO_FUNCIONAL,"1",2)
-        )
-    ).subscribe(resp => this.mediaTotalBajaNoFuncional=resp); 
+  constructor(private operacionService: OperacionService ,private activatedRoute?:ActivatedRoute) {}
+  ngOnInit(): void {
+    this.operacionService.obtenerPromedioRequisitos(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.promedioPonderadoNoFuncional=resp})        
+    this.operacionService.obtenerPromedioRequisitos(constantes.FUNCIONAL,this.projectId!).then(resp => {this.promedioPonderadoFuncional=resp})
+    this.operacionService.obtenerMediaProyecto(constantes.VACIO,this.projectId!).then(resp => {this.mediaProyecto=resp})
+    this.operacionService.obtenerMediaProyecto(constantes.FUNCIONAL,this.projectId!).then(resp => {this.mediaProyectoFuncional=resp}) 
+    this.operacionService.obtenerMediaProyecto(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.mediaProyectoNoFuncional=resp}) 
+    this.operacionService.obtenerCantidadRequisitos(constantes.VACIO,this.projectId!).then(resp => {this.totalReq=resp})
+    this.operacionService.obtenerCantidadRequisitos(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.totalReqNoFuncional=resp})
+    this.operacionService.obtenerCantidadRequisitos(constantes.FUNCIONAL,this.projectId!).then(resp => {this.totalReqFuncional=resp})
+    this.operacionService.obtenerMediaProyectoAlta(constantes.VACIO,this.projectId!).then(resp => {this.mediaProyectoAlto=resp})
+    this.operacionService.obtenerMediaProyectoAlta(constantes.FUNCIONAL,this.projectId!).then(resp => {this.mediaProyectoAltoFuncional=resp})
+    this.operacionService.obtenerMediaProyectoAlta(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.mediaProyectoAltoNoFuncional=resp})
+    this.operacionService.obtenerPromedioRequisitos(constantes.VACIO,this.projectId!).then(resp => {this.promedioTodosReq=resp})
+    this.operacionService.obtenerCantidadRequisitosTotal(constantes.VACIO,this.projectId!).then(resp => {this.numeroRequisitos=resp}) 
+    this.operacionService.obtenerCantidadRequisitosTotal(constantes.FUNCIONAL,this.projectId!).then(resp => {this.numeroRequisitosFuncionales=resp})  
+    this.operacionService.obtenerCantidadRequisitosTotal(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.numeroRequisitosNoFuncionales=resp}) 
+    this.operacionService.obtenerMediaTotal(constantes.VACIO,this.projectId!,0).then(resp => {this.mediaTotal=resp}) 
+    this.operacionService.obtenerMediaTotal(constantes.VACIO,this.projectId!,1).then(resp => {this.mediaTotalAlta=resp}) 
+    this.operacionService.obtenerMediaTotal(constantes.VACIO,this.projectId!,2).then(resp => {this.mediaTotalBaja=resp})
+    this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,0).then(resp => {this.mediaTotalFuncional=resp})
+    this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,1).then(resp => {this.mediaTotalAltaFuncional=resp})
+    this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,2).then(resp => {this.mediaTotalBajaFuncional=resp})
+    this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,0).then(resp => {this.mediaTotalNoFuncional=resp})
+    this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,1).then(resp => {this.mediaTotalAltaNoFuncional=resp})
+    this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,2).then(resp => {this.mediaTotalBajaNoFuncional=resp})
     
   }
 

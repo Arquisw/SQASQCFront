@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { CaracteristicaInterface } from 'src/app/interfaces/caracteristica';
 import { InformeInterface, ErrorCompleto } from 'src/app/interfaces/informe';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 import { CaracteristicaService } from 'src/app/servicio/caracteristica/caracteristica.service';
 
 @Component({
@@ -29,98 +30,22 @@ export class DistErrorNoFuncComponent {
 
   caracteristicas: CaracteristicaInterface[] = []
 
-  constructor(private caracteristicaService?: CaracteristicaService,private activatedRoute?:ActivatedRoute) {}
-  ngOnInit(): void {    
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCaracteristicaById("1")
-        )
-    ).subscribe(resp => this.caracteristicas=resp);
+  projectId = localStorage.getItem(constantes.PROJECT_ID);
 
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCaracteristicaByIdAndName("NO Funcional","1")
-        )
-    ).subscribe(resp => this.distribucionErrorNumero=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageByCaracteristica("NO Funcional","1")
-        )
-    ).subscribe(resp => this.distribucionErrorPorcentaje=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorDDE("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosErrorDDE=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorDDE("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorDDE=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorDII("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosErrorDII=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorDII("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorDII=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllCauseErrorVAR("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosErrorVAR=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getAllPercentageCauseErrorVAR("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosPorcErrorVAR=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getErrorAllRequieremnt("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getPercentageAllRequieremnt("NO Funcional","1")
-        )
-    ).subscribe(resp => this.TodosPorcError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCauseErrorAllRequieremnt("NO Funcional","1")
-        )
-    ).subscribe(resp => this.CauseError=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.caracteristicaService!.getCauseErrorPercentageAllRequieremnt("NO Funcional","1")
-        )
-    ).subscribe(resp => this.CauseErrorPorc=resp);
+  constructor(private caracteristicaService: CaracteristicaService,private activatedRoute?:ActivatedRoute) {}
+  ngOnInit(): void { 
+    this.caracteristicaService.getAllCaracteristicaByIdAndName(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.distribucionErrorNumero=resp})
+    this.caracteristicaService.getAllPercentageByCaracteristica(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.distribucionErrorPorcentaje=resp})
+    this.caracteristicaService.getAllCauseErrorDDE(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosErrorDDE=resp}) 
+    this.caracteristicaService.getAllPercentageCauseErrorDDE(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosPorcErrorDDE=resp}) 
+    this.caracteristicaService.getAllCauseErrorDII(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosErrorDII=resp})
+    this.caracteristicaService.getAllPercentageCauseErrorDII(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosPorcErrorDII=resp})
+    this.caracteristicaService.getAllCauseErrorVAR(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosErrorVAR=resp})
+    this.caracteristicaService.getAllPercentageCauseErrorVAR(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosPorcErrorVAR=resp})
+    this.caracteristicaService.getErrorAllRequieremnt(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosError=resp})
+    this.caracteristicaService.getPercentageAllRequieremnt(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.TodosPorcError=resp})
+    this.caracteristicaService.getCauseErrorAllRequieremnt(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.CauseError=resp})
+    this.caracteristicaService.getCauseErrorPercentageAllRequieremnt(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.CauseErrorPorc=resp})
   }
 
 }

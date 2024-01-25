@@ -38,13 +38,7 @@ export class CalificarComponent {
   nota:number= 0;
 
   requisitos:RequisitoInterface[]=[];
-  req : RequisitoInterface = {
-    projectId : 1,
-    name: '',
-    description: '',
-    typeRequirement : ''
-
-  } 
+  req !: RequisitoInterface ;
 
   constructor(private requisitoService: RequisitosService, private operacionService: OperacionService,private alert: alert, private activatedRoute?:ActivatedRoute, private caracteristicaService?: CaracteristicaService ){}
 

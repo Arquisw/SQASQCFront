@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs';
 import { CaracteristicaInterface } from 'src/app/interfaces/caracteristica';
 import { operacionInterface } from 'src/app/interfaces/operacion';
 import { RequisitoInterface } from 'src/app/interfaces/requisito';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 import { CaracteristicaService } from 'src/app/servicio/caracteristica/caracteristica.service';
 import { RequisitosService } from 'src/app/servicio/requisito/requisitos.service';
 
@@ -32,13 +33,7 @@ export class DetalleComponent {
   errorEIE : number =0;
 
   requisitos:RequisitoInterface[]=[];
-  req : RequisitoInterface = {
-    requirementId:1,
-    projectId:3,
-    name: '',
-    description: '',
-    typeRequirement : ''
-  }
+  req !: RequisitoInterface ;
   
   constructor(private requisitoService: RequisitosService, private activatedRoute?:ActivatedRoute, private caracteristicaService?: CaracteristicaService){}
   
@@ -69,14 +64,14 @@ export class DetalleComponent {
     this.activatedRoute?.params.
     pipe(
       switchMap( 
-        ({id}) => this.requisitoService.obtenerOperacionError("1",id)       
+        ({id}) => this.requisitoService.obtenerOperacionError(constantes.EIE,id)       
         )
     ).subscribe(resp => this.errorEIE=resp) 
 
     this.activatedRoute?.params.
     pipe(
       switchMap( 
-        ({id}) => this.requisitoService.obtenerOperacionError("2",id)       
+        ({id}) => this.requisitoService.obtenerOperacionError(constantes.MCC,id)       
         )
     ).subscribe(resp => this.errorMCC=resp) 
 
@@ -95,12 +90,4 @@ export class DetalleComponent {
     ).subscribe(resp => this.errorMCC=resp) 
     
   }
-
-  
-
-  calcularOperaciones(){    
- 
-    console.log(this.operaciones)   
-  }
-
 }

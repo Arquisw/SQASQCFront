@@ -35,6 +35,10 @@ export class InicioComponent implements OnInit{
     console.log(localStorage.getItem('projectId'))
   }
 
+  redirigirRequisitos(){
+    window.location.href = 'http://localhost:4200/inicio'
+  }
+
   
 
 }

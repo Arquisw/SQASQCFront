@@ -17,12 +17,7 @@ export class RegistrarComponent implements OnInit{
 
   mensajeError="";
 
-  req : RequisitoInterface = {
-    projectId: 1,
-    name: '',
-    description: '',
-    typeRequirement : ''
-  }
+  req !: RequisitoInterface ;
 
   constructor(private requerimiento : RequisitosService, private alert: alert, private constantes?:constantes, private activatedRoute?:ActivatedRoute) { }
 
@@ -33,8 +28,7 @@ export class RegistrarComponent implements OnInit{
         switchMap(({id}) => this.requerimiento.getRequerimientoById(id))
         )
       .subscribe(
-        resp => this.req=resp)
-      
+        resp => this.req=resp)      
     
   }
 

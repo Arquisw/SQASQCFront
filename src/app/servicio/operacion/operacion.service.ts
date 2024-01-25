@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { InformeInterface } from 'src/app/interfaces/informe';
 import { operacionInterface, operacionRangoInterface } from 'src/app/interfaces/operacion';
 import { environment } from 'src/environments/environment';
 
@@ -13,6 +12,10 @@ export class OperacionService {
   private url = environment.url;
 
   constructor(private http: HttpClient) { }
+
+  obtenerOperaciones(){
+    return firstValueFrom(this.http.get<operacionInterface[]>(`${this.url}/operations`));
+  }  
 
   obtenerMediaProyecto(tipoRequisito:string,idProject:string):Promise<operacionRangoInterface>{
     return firstValueFrom(this.http.get<operacionRangoInterface>(`${this.url}/operations/calculate-median?typeRequirement=${tipoRequisito}&projectId=${idProject}`));
