@@ -17,9 +17,14 @@ export class RegistrarComponent implements OnInit{
 
   mensajeError="";
 
-  req !: RequisitoInterface ;
+  req : RequisitoInterface = {
+    projectId : parseInt(localStorage.getItem('projectId')!),
+    name : '',
+    description: '',
+    typeRequirement: ''
+  };
 
-  constructor(private requerimiento : RequisitosService, private alert: alert, private constantes?:constantes, private activatedRoute?:ActivatedRoute) { }
+  constructor(private requerimiento : RequisitosService, private alert: alert, private constantes:constantes, private activatedRoute?:ActivatedRoute) { }
 
 
   ngOnInit(): void {      
