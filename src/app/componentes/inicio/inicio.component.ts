@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { constantes } from 'src/app/navbar/constantes/constantes';
 
 @Component({
   selector: 'app-inicio',
@@ -9,8 +10,8 @@ import { switchMap } from 'rxjs';
 })
 export class InicioComponent implements OnInit{
 
-  projectId :any;
   token!: string;
+  projectId = localStorage.getItem(constantes.PROJECT_ID);
 
   constructor(private activatedRoute:ActivatedRoute){
 
@@ -29,14 +30,13 @@ export class InicioComponent implements OnInit{
       switchMap( 
         ({id}) => this.projectId=id
         )
-    ).subscribe(resp => this.projectId=resp) 
+    ).subscribe(resp => this.projectId!=resp) 
     
-    localStorage.setItem('projectId', this.projectId);
-    console.log(localStorage.getItem('projectId'))
+    localStorage.setItem(constantes.PROJECT_ID, this.projectId!);
   }
 
   redirigirRequisitos(){
-    window.location.href = 'http://localhost:4200/inicio'
+    window.location.href = 'http://localhost:4200/inicio/';
   }
 
   
