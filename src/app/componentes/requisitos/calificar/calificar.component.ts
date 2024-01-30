@@ -35,7 +35,7 @@ export class CalificarComponent {
 
   textoDeInput: string = '';
 
-  nota:number= 0;
+  calificado:number = 0;
 
   requisitos:RequisitoInterface[]=[];
   req !: RequisitoInterface ;
@@ -56,18 +56,12 @@ export class CalificarComponent {
         ({id}) => this.caracteristicaService!.getCaracteristicaById(id)
         )
     ).subscribe(resp => this.caracteristicas=resp);
-
-    this.activatedRoute?.params.
-    pipe(
-      switchMap( 
-        ({id}) => this.requisitoService!.obtenerOperaciones(id)
-        )
-    ).subscribe(resp => this.operaciones=resp);
   } 
 
   calificar():void{
     this.formularioValido=true;
-    this.errorValido=true;
+    this.errorValido=true  
+    
     for (let i = 0; i < this.caracteristicas.length; i++) {
       if(this.caracteristicas[i].gradeCharacteristic<=0 || this.caracteristicas[i].gradeCharacteristic>9 || this.caracteristicas[i].gradeCharacteristic == null){        
         this.formularioValido=false;
@@ -82,6 +76,7 @@ export class CalificarComponent {
       this.alert.error(constantes.SW_LO_SENTIMOS,constantes.SW_ERROR_TIPO_ERROR);    
     }else{  
       for (let i = 0; i < this.caracteristicas.length; i++){ 
+        
         if(this.caracteristicas[i].gradeCharacteristic>8){
           this.error.dde=false;
           this.error.dii=false;
@@ -93,8 +88,10 @@ export class CalificarComponent {
         }         
         this.caracteristicaService?.updateGrade(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.caracteristicas[i].gradeCharacteristic);
         this.caracteristicaService?.updateError(this.req.requirementId!,this.caracteristicas[i].idCharacteristic!,this.error);
-      } 
-      this.operacionService.actualizarOperaciones(this.req.requirementId!,this.operaciones);
+      }       
+      this.operacionService.actualizarOperaciones(this.req.requirementId!);
+      this.requisitoService.actualizarCalificado(this.req.requirementId!);
+      
       this.alert.successTimer(constantes.SW_BIEN_HECHO,constantes.SW_CALIFICACION_EXITOSA); 
     }  
   }

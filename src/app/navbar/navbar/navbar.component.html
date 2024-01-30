@@ -16,11 +16,15 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/requisitos/consultar">Consultar</a></li>
-              <li><a class="dropdown-item" routerLink="/requisitos/registrar">Registrar</a></li>
+              <div [ngClass]="{'registrar':!restriccion}">
+                <li>
+                  <a class="dropdown-item" routerLink="requisitos/registrar">Registrar</a>
+              </li>
+              </div>   
               <li><a class="dropdown-item" routerLink="/requisitos/consultar">Calificar</a></li>
             </ul>
           </li>
-          <div [ngClass]="{'informe':restriccion}">
+          <div [ngClass]="{'informe':!restriccion}">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="/informe">Informes</a>
           </li>
@@ -42,9 +46,6 @@
               Usuario
             </a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">   
-                <li><a class="dropdown-item" routerLink="/proyectos">Perfil</a></li>
-                <li><a class="dropdown-item" routerLink="/presentacion">Ajustes</a></li>
-                <hr>
                 <li><a class="dropdown-item" routerLink="/acercanosotros">Cerrar Sesion</a></li>           
             </ul>
           </li>

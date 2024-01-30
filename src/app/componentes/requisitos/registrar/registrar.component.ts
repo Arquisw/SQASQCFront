@@ -21,7 +21,8 @@ export class RegistrarComponent implements OnInit{
     projectId : parseInt(localStorage.getItem('projectId')!),
     name : '',
     description: '',
-    typeRequirement: ''
+    typeRequirement: '',
+    qualified: false
   };
 
   constructor(private requerimiento : RequisitosService, private alert: alert, private constantes:constantes, private activatedRoute?:ActivatedRoute) { }

@@ -18,12 +18,12 @@ export class InicioComponent implements OnInit{
   }
   ngOnInit(): void {  
 
-    /*this.activatedRoute.queryParams.subscribe(
+    this.activatedRoute.queryParams.subscribe(
       params => {
         this.token = params['token'];
         this.projectId = params['id'];
       }
-    )*/
+    )
     
     this.activatedRoute?.params.
     pipe(

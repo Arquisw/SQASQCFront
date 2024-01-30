@@ -4,6 +4,7 @@ export interface RequisitoInterface{
     name:                       string;
     description:                string;
     typeRequirement:            string;
+    qualified:                  boolean;
 }
 
 export enum tipoRequisito{

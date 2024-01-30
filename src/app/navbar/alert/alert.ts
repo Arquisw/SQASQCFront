@@ -20,6 +20,17 @@ export class alert{
             }
         })
     }
+    public successReload(titulo:String, text : String) : void {
+        Swal.fire({
+            icon: 'success',
+            title: `${titulo}`,
+            text: `${text}`
+          }).then(function (result) {
+            if (result.value) {
+                window.location.reload()
+            }
+        })
+    }
 
     public success(titulo:String, text : String) : void {
         Swal.fire({

@@ -17,9 +17,15 @@ export class RequisitosService {
 
   constructor(private http: HttpClient) { }
 
-  getRequerimiento(idProyecto: number){
-    return this.http.get<RequisitoInterface[]>(`${this.url}/requirements?projectId=${idProyecto}`).pipe(catchError(this.errorHandler));
+  getRequerimiento1(idProyecto: number){
+   // return this.http.get<RequisitoInterface[]>(`${this.url}/requirements?projectId=${idProyecto}`).pipe(catchError(this.errorHandler));
+   return firstValueFrom(this.http.get<RequisitoInterface[]>(`${this.url}/requirements?projectId=${idProyecto}`));
   }
+
+  getRequerimiento2(idProyecto: number){
+    return this.http.get<RequisitoInterface[]>(`${this.url}/requirements?projectId=${idProyecto}`).pipe(catchError(this.errorHandler));
+    
+   }
 
   agregarRequerimiento(requisito:RequisitoInterface):Promise<RequisitoInterface>{
     return firstValueFrom(this.http.post<RequisitoInterface>(`${this.url}/requirements`,requisito));
@@ -33,7 +39,7 @@ export class RequisitosService {
     return firstValueFrom(this.http.put<RequisitoInterface>(`${this.url}/requirements${requisito.requirementId}`,requisito));
   }
 
-  obtenerOperaciones(id:string):Promise<operacionInterface>{
+  obtenerOperaciones(id:number):Promise<operacionInterface>{
     return firstValueFrom(this.http.get<operacionInterface>(`${this.url}/characteristics/all-operations/${id}`));
   }
   
@@ -48,6 +54,14 @@ export class RequisitosService {
   
   obtenerCantidadMCC(idReq:string):Promise<number>{
     return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/mcc/${idReq}`));
+  }
+
+  actualizarCalificado(idReq:number){
+    return firstValueFrom(this.http.put(`${this.url}/requirements/update-requirement-qualified?requirementId=${idReq}`,""));
+  }
+
+  actualizarEstado(idProyecto:number){
+    return firstValueFrom(this.http.put(`${this.url}/requirements/update-project-status?projectId=${idProyecto}`,""));
   }
 
   errorHandler(error: HttpErrorResponse){

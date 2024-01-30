@@ -4,14 +4,12 @@
   cursor: pointer;
 }
 
-
-
 .nav-item:hover{
     background-color: #026f35;     
     color: white;
 }
 
-.informe{
+.informe, .registrar{
   pointer-events: none;
   opacity: 0.5;
 }

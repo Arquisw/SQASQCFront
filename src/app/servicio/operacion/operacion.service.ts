@@ -21,8 +21,8 @@ export class OperacionService {
     return firstValueFrom(this.http.get<operacionRangoInterface>(`${this.url}/operations/calculate-median?typeRequirement=${tipoRequisito}&projectId=${idProject}`));
   }  
   
-  actualizarOperaciones(id:number, operacion:operacionInterface):Promise<operacionInterface>{
-    return firstValueFrom(this.http.put<operacionInterface>(`${this.url}/operations/${id}`,operacion));
+  actualizarOperaciones(id:number):Promise<operacionInterface>{
+    return firstValueFrom(this.http.put<operacionInterface>(`${this.url}/operations/update-operation/${id}`,""));
   }
 
   obtenerMediaProyectoAlta(tipoRequisito:string,idProject:string):Promise<operacionRangoInterface>{

@@ -1,7 +1,7 @@
 export interface operacionInterface{    
     operationId?:                       number,
     requirementId?:                     number,
-    levelAdecuacy:                      number,
+    levelAdequacy:                      number,
     evaluatedCharacteristics:           number,
     levelWeightScore:                   number,
     maximumScore:                       number,
