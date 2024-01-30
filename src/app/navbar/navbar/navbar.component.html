@@ -35,10 +35,10 @@
               Nosotros
             </a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="/proyectos">Proyectos</a></li>
-              <li><a class="dropdown-item" routerLink="/presentacion">Presentación</a></li>
-              <li><a class="dropdown-item" aria-current="page" routerLink="/fundamentacion">Fundamentación</a></li>
-              <li><a class="dropdown-item" routerLink="/acercanosotros">Responsables</a></li>
+              <li><a class="dropdown-item" (click)="redirigirProyecto()">Proyectos</a></li>
+              <li><a class="dropdown-item" (click)="redirigirPresentacion()">Presentación</a></li>
+              <li><a class="dropdown-item" aria-current="page" (click)="redirigirFundamento()">Fundamentación</a></li>
+              <li><a class="dropdown-item" (click)="redirigirResponsable()">Responsables</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

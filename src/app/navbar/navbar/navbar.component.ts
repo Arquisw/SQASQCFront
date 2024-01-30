@@ -41,6 +41,19 @@ export class NavbarComponent implements OnInit{
     this.userService.consultarPersonaPorId(this.usuarioActualId).then(resp => {this.usuario=resp}) 
   }
 
+  redirigirProyecto(){
+    window.location.href = 'http://localhost:4200/proyecto/';
+  }
+  redirigirPresentacion(){
+    window.location.href = 'http://localhost:4200/presentacion/';
+  }
+  redirigirFundamento(){
+    window.location.href = 'http://localhost:4200/fundamentos/';
+  }
+  redirigirResponsable(){
+    window.location.href = 'http://localhost:4200/responsables/';
+  }
+
   
 
 }
