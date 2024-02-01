@@ -386,7 +386,7 @@
             <div class="cuartaGrafica">
                 <div class="collapse" id="cuartaGrafica">
                     <div class="row">                      
-                        <div class="col-md-4" style="margin-left: 8%; color: black;">
+                        <div class="col-md-4" style="margin-left: 18%; color: black;">
                             <br>
                             <div style="background-color: #375623; width: 35%;"> 
                                 ‎  OPTIMIZADO
@@ -437,70 +437,81 @@
                                         <div class="texto-vertical-2">BAJO</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3"> ‎ ‎ Rango Alto 
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966; color: black;"> ‎ Medio</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3"> ‎ ‎ 
+                                    <div style="background-color: #c6e0b4; color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional>=88; else default"> Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<88 && mediaTotalAltaFuncional>=77; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<77 && mediaTotalAltaFuncional>=66; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<66 && mediaTotalAltaFuncional>=55; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<55 && mediaTotalAltaFuncional>=44; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<44 && mediaTotalAltaFuncional>=33; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<33 && mediaTotalAltaFuncional>=22; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<22 && mediaTotalAltaFuncional>=11; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<11; else default"> Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                                 <div class="col-md-3" style="color: black;"><br>
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalAltaFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
-                                </div>
-                            </div>                            
-                        </div>
-                        <div class="col-md-4" style="margin-left: -10%">
-                            ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Rango Bajo
-                            <br>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">ALTO</div>
-                                    </div>
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">MEDIO</div>
-                                    </div>
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">BAJO</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ Medio</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
-                                </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalBajaFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                    <div style="background-color: #c6e0b4;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional>=88; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<88 && mediaTotalAltaFuncional>=77; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<77 && mediaTotalAltaFuncional>=66; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<66 && mediaTotalAltaFuncional>=55; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<55 && mediaTotalAltaFuncional>=44; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<44 && mediaTotalAltaFuncional>=33; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<33 && mediaTotalAltaFuncional>=22; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<22 && mediaTotalAltaFuncional>=11; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<11; else default">{{mediaTotalAltaFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                             </div>                            
                         </div>
@@ -657,7 +668,7 @@
             <div class="sextaGrafica">
                 <div class="collapse" id="sextaGrafica">
                     <div class="row">                       
-                        <div class="col-md-4" style="margin-left: 15%;color: black;">
+                        <div class="col-md-4" style="margin-left: 18%; color: black;">
                             <br>
                             <div style="background-color: #375623; width: 35%;"> 
                                 ‎  OPTIMIZADO
@@ -688,12 +699,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <br>
                             <div class="row">
-                                <div class="col-md-1" style="background-color: #ccff66; color: black;"> 
-                                    <br><br><br><br> 
-                                {{numeroRequisitosFuncionales}}
-                            </div>
+                                <div class="col-md-1" style="background-color: #ccff66; color: black; margin-top: 5%;"> 
+                                    <br><br><br><br>
+                                    <div>{{numeroRequisitosFuncionales}}</div>
+                                </div>
                                 <div class="col-md-1">
                                     
                                     <div class="row"> ‎ </div>
@@ -709,27 +719,81 @@
                                         <div class="texto-vertical-2">BAJO</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ Media</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3"> ‎ ‎ 
+                                    <div style="background-color: #c6e0b4; color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional>=88; else default"> Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<88 && mediaTotalAltaFuncional>=77; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<77 && mediaTotalAltaFuncional>=66; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<66 && mediaTotalAltaFuncional>=55; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<55 && mediaTotalAltaFuncional>=44; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<44 && mediaTotalAltaFuncional>=33; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<33 && mediaTotalAltaFuncional>=22; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<22 && mediaTotalAltaFuncional>=11; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<11; else default"> Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalAltaFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3" style="color: black;"><br>
+                                    <div style="background-color: #c6e0b4;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional>=88; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<88 && mediaTotalAltaFuncional>=77; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<77 && mediaTotalAltaFuncional>=66; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<66 && mediaTotalAltaFuncional>=55; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<55 && mediaTotalAltaFuncional>=44; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<44 && mediaTotalAltaFuncional>=33; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<33 && mediaTotalAltaFuncional>=22; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<22 && mediaTotalAltaFuncional>=11; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;">
+                                        <ng-container *ngIf="mediaTotalAltaFuncional<11; else default">{{mediaTotalAltaFuncional}}</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                             </div>                            
                         </div>
@@ -750,7 +814,7 @@
             <div class="septimaGrafica">
                 <div class="collapse" id="septimaGrafica">
                     <div class="row">                      
-                        <div class="col-md-4" style="margin-left: 8%; color: black;">
+                        <div class="col-md-4" style="margin-left: 18%; color: black;">
                             <br>
                             <div style="background-color: #375623; width: 35%;"> 
                                 ‎  OPTIMIZADO
@@ -782,7 +846,10 @@
                         </div>
                         <div class="col-md-4">
                             <div class="row">
-                                <div class="col-md-1" style="background-color: #ccff66; margin-top: 5%; color: black;"> <br><br><br><br>{{numeroRequisitosNoFuncionales}} </div>
+                                <div class="col-md-1" style="background-color: #ccff66; color: black; margin-top: 5%;"> 
+                                    <br><br><br><br>
+                                    <div>{{numeroRequisitosNoFuncionales}}</div>
+                                </div>
                                 <div class="col-md-1">
                                     
                                     <div class="row"> ‎ </div>
@@ -798,71 +865,81 @@
                                         <div class="texto-vertical-2">BAJO</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3"> 
-                                    ‎ ‎ Rango Alto
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966; color: black;"> ‎ Medio</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3"> ‎ ‎ 
+                                    <div style="background-color: #c6e0b4; color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional>=88; else default"> Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<88 && mediaTotalAltaNoFuncional>=77; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<77 && mediaTotalAltaNoFuncional>=66; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<66 && mediaTotalAltaNoFuncional>=55; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<55 && mediaTotalAltaNoFuncional>=44; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<44 && mediaTotalAltaNoFuncional>=33; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<33 && mediaTotalAltaNoFuncional>=22; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<22 && mediaTotalAltaNoFuncional>=11; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<11; else default"> Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                                 <div class="col-md-3" style="color: black;"><br>
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalAltaNoFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
-                                </div>
-                            </div>                            
-                        </div>
-                        <div class="col-md-4" style="margin-left: -10%">
-                            ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Rango Bajo
-                            <br>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">ALTO</div>
-                                    </div>
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">MEDIO</div>
-                                    </div>
-                                    <div class="row"> ‎ </div>
-                                    <div class="row">
-                                        <div class="texto-vertical-2">BAJO</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ Medio</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
-                                </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalBajaNoFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                    <div style="background-color: #c6e0b4;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional>=88; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<88 && mediaTotalAltaNoFuncional>=77; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<77 && mediaTotalAltaNoFuncional>=66; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<66 && mediaTotalAltaNoFuncional>=55; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<55 && mediaTotalAltaNoFuncional>=44; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<44 && mediaTotalAltaNoFuncional>=33; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<33 && mediaTotalAltaNoFuncional>=22; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<22 && mediaTotalAltaNoFuncional>=11; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<11; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                             </div>                            
                         </div>
@@ -1019,7 +1096,7 @@
             <div class="novenaGrafica">
                 <div class="collapse" id="novenaGrafica">
                     <div class="row">                       
-                        <div class="col-md-4" style="margin-left: 15%; color: black;">
+                        <div class="col-md-4" style="margin-left: 18%; color: black;">
                             <br>
                             <div style="background-color: #375623; width: 35%;"> 
                                 ‎  OPTIMIZADO
@@ -1050,11 +1127,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <br>
                             <div class="row">
-                                <div class="col-md-1" style="background-color: #ccff66; color: black;"> 
-                                <br><br><br><br>{{numeroRequisitosNoFuncionales}}                            
-                            </div>
+                                <div class="col-md-1" style="background-color: #ccff66; color: black; margin-top: 5%;"> 
+                                    <br><br><br><br>
+                                    <div>{{numeroRequisitosNoFuncionales}}</div>
+                                </div>
                                 <div class="col-md-1">
                                     
                                     <div class="row"> ‎ </div>
@@ -1070,27 +1147,81 @@
                                         <div class="texto-vertical-2">BAJO</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ Medio</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3"> ‎ ‎ 
+                                    <div style="background-color: #c6e0b4; color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional>=88; else default"> Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<88 && mediaTotalAltaNoFuncional>=77; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<77 && mediaTotalAltaNoFuncional>=66; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<66 && mediaTotalAltaNoFuncional>=55; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<55 && mediaTotalAltaNoFuncional>=44; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<44 && mediaTotalAltaNoFuncional>=33; else default"> ‎ Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<33 && mediaTotalAltaNoFuncional>=22; else default"> ‎ Alto</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<22 && mediaTotalAltaNoFuncional>=11; else default"> ‎ Medio</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;color: black;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<11; else default"> Bajo</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
-                                <div class="col-md-3" style="color: black;">
-                                    <div style="background-color: #c6e0b4;"> ‎ </div>
-                                    <div style="background-color: #a9d08e;"> ‎ </div>
-                                    <div style="background-color: #548235;"> ‎ </div>
-                                    <div style="background-color: #ffe699;"> ‎ </div>
-                                    <div style="background-color: #ffd966;"> ‎ {{mediaTotalAltaNoFuncional}}%</div>
-                                    <div style="background-color: #ffc000;"> ‎ </div>
-                                    <div style="background-color: #ffccf2;"> ‎ </div>
-                                    <div style="background-color: #ff7c80;"> ‎ </div>
-                                    <div style="background-color: #ff0000;"> ‎ </div>
+                                <div class="col-md-3" style="color: black;"><br>
+                                    <div style="background-color: #c6e0b4;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional>=88; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #a9d08e;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<88 && mediaTotalAltaNoFuncional>=77; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #548235;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<77 && mediaTotalAltaNoFuncional>=66; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffe699;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<66 && mediaTotalAltaNoFuncional>=55; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffd966;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<55 && mediaTotalAltaNoFuncional>=44; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffc000;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<44 && mediaTotalAltaNoFuncional>=33; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ffccf2;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<33 && mediaTotalAltaNoFuncional>=22; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff7c80;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<22 && mediaTotalAltaNoFuncional>=11; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
+                                    <div style="background-color: #ff0000;">
+                                        <ng-container *ngIf="mediaTotalAltaNoFuncional<11; else default">{{mediaTotalAltaNoFuncional}}%</ng-container>
+                                        <ng-template #default> ‎ </ng-template>
+                                    </div> 
                                 </div>
                             </div>                            
                         </div>

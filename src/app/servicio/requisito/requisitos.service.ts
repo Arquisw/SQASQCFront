@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
 import { operacionInterface, operacionRangoInterface } from 'src/app/interfaces/operacion';
+import { tipoConsultoria } from 'src/app/interfaces/proyecto';
 
 
 @Injectable({
@@ -54,6 +55,10 @@ export class RequisitosService {
   
   obtenerCantidadMCC(idReq:string):Promise<number>{
     return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/mcc/${idReq}`));
+  }
+
+  obtenerTipoConsultoria(idReq:string):Promise<tipoConsultoria>{
+    return firstValueFrom(this.http.get<tipoConsultoria>(`${this.url}/requirements/get-type-consulting?projectId=${idReq}`));
   }
 
   actualizarCalificado(idReq:number){

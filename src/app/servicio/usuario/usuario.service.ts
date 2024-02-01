@@ -15,6 +15,6 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   consultarPersonaPorId(id: number): Promise<PersonaResumen> {
-    return firstValueFrom(this.http.get<PersonaResumen>(`http://localhost:8080/usuarios/${id}`));
+    return firstValueFrom(this.http.get<PersonaResumen>(`http://localhost:8080/api/usuarios/${id}`));
   }
 }

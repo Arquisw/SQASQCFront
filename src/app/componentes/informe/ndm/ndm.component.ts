@@ -51,7 +51,7 @@ export class NdmComponent {
   mediaTotalAltaNoFuncional !: number;
   mediaTotalBajaNoFuncional !: number;
 
-  projectId = localStorage.getItem(constantes.PROJECT_ID);
+  projectId = sessionStorage.getItem(constantes.PROJECT_ID);
 
   caracteristicas: CaracteristicaInterface[] = []
 
@@ -76,11 +76,13 @@ export class NdmComponent {
     this.operacionService.obtenerMediaTotal(constantes.VACIO,this.projectId!,1).then(resp => {this.mediaTotalAlta=resp}) 
     this.operacionService.obtenerMediaTotal(constantes.VACIO,this.projectId!,2).then(resp => {this.mediaTotalBaja=resp})
     this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,0).then(resp => {this.mediaTotalFuncional=resp})
-    this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,1).then(resp => {this.mediaTotalAltaFuncional=resp})
-    this.operacionService.obtenerMediaTotal(constantes.FUNCIONAL,this.projectId!,2).then(resp => {this.mediaTotalBajaFuncional=resp})
+
+    this.operacionService.obtenerPromedioPonderado(constantes.FUNCIONAL,this.projectId!).then(resp => {this.mediaTotalAltaFuncional=resp})
+
     this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,0).then(resp => {this.mediaTotalNoFuncional=resp})
-    this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,1).then(resp => {this.mediaTotalAltaNoFuncional=resp})
-    this.operacionService.obtenerMediaTotal(constantes.NO_FUNCIONAL,this.projectId!,2).then(resp => {this.mediaTotalBajaNoFuncional=resp})
+
+    this.operacionService.obtenerPromedioPonderado(constantes.NO_FUNCIONAL,this.projectId!).then(resp => {this.mediaTotalAltaNoFuncional=resp})
+
     
   }
 

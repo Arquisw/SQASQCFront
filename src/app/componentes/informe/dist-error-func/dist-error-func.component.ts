@@ -30,7 +30,7 @@ export class DistErrorFuncComponent {
 
   caracteristicas: CaracteristicaInterface[] = []
   
-  projectId = localStorage.getItem(constantes.PROJECT_ID);
+  projectId = sessionStorage.getItem(constantes.PROJECT_ID);
 
   constructor(private caracteristicaService: CaracteristicaService,private activatedRoute?:ActivatedRoute) {}
   ngOnInit(): void {   

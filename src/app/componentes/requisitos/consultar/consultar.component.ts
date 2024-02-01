@@ -21,7 +21,7 @@ export class ConsultarComponent implements OnInit{
   operaciones:operacionInterface[]=[];
   calificado: number = 0 ;
 
-  projectId =localStorage.getItem(constantes.PROJECT_ID);
+  projectId =sessionStorage.getItem(constantes.PROJECT_ID);
   
   
   constructor(private requisitoService: RequisitosService, private alert: alert){}
@@ -37,11 +37,11 @@ export class ConsultarComponent implements OnInit{
       }
     }
     if(this.calificado==this.requisitos.length){
-      localStorage.setItem('visibilidad',new Boolean(true).toString())
+      window.sessionStorage.setItem('sqa',new Boolean(true).toString())
       this.requisitoService.actualizarEstado(parseInt(this.projectId!))
       this.alert.successReload(constantes.SW_BIEN_HECHO,constantes.FIN_EXITOSO);
     } else{
-      this.alert.successReload(constantes.SW_INFO,constantes.FIN_PENDIENTE);
+      this.alert.infoReload(constantes.SW_INFO,constantes.FIN_PENDIENTE);
     }    
   }
 }

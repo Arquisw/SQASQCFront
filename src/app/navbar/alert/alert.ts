@@ -40,12 +40,25 @@ export class alert{
           })
     }
 
+    
+
     public error(titulo:String, text : String) : void {
         Swal.fire({
             icon: 'error',
             title: `${titulo}`,
             text: `${text}`
           })
+    }
+    public infoReload(titulo:String, text : String) : void {
+        Swal.fire({
+            icon: 'info',
+            title: `${titulo}`,
+            text: `${text}`
+          }).then(function (result) {
+            if (result.value) {
+                window.location.reload()
+            }
+        })
     }
 
     public info(titulo:String, text : String) : void {

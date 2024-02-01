@@ -25,7 +25,7 @@
                     </div>                                       
                 </div>
             </div>
-            <!--<button type="button" *ngFor="let operacion of operaciones | paginate : {itemsPerPage:10, currentPage: paginaActual}" [disabled]="operacion.qualified" class="btn btn-light" [routerLink]="['/requisitos/calificar/', operacion.requirementId]">Calificar</button>-->
+            <!--<button type="button"  *ngFor="let operacion of operaciones | paginate : {itemsPerPage:10, currentPage: paginaActual}" [disabled]="operacion.qualified" class="btn btn-light" [routerLink]="['/requisitos/calificar/', operacion.requirementId]">Calificar</button>-->
         </div> 
         
         <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="paginaActual = $event"></pagination-controls>

@@ -44,6 +44,8 @@ export class OperacionService {
   obtenerMediaTotal(tipoRequisito:string, idProject:string, grafica:number):Promise<number>{
     return firstValueFrom(this.http.get<number>(`${this.url}/operations/total-weighted-median?typeRequirement=${tipoRequisito}&projectId=${idProject}&graphicNumber=${grafica}`));
   } 
-  
 
+  obtenerPromedioPonderado(tipoRequisito:string, idProject:string):Promise<number>{
+    return firstValueFrom(this.http.get<number>(`${this.url}/operations/weighted-average-level-adequacy?typeRequirement=${tipoRequisito}&projectId=${idProject}`));
+  } 
 }
