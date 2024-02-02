@@ -28,14 +28,7 @@ export class RegistrarComponent implements OnInit{
   constructor(private requerimiento : RequisitosService, private alert: alert, private constantes:constantes, private activatedRoute?:ActivatedRoute) { }
 
 
-  ngOnInit(): void {      
-    this.activatedRoute?.params.
-    pipe(
-        switchMap(({id}) => this.requerimiento.getRequerimientoById(id))
-        )
-      .subscribe(
-        resp => this.req=resp)      
-    
+  ngOnInit(): void {       
   }
 
   guardar(formularioRequisito:NgForm){

@@ -23,46 +23,32 @@ export class InicioComponent implements OnInit{
   }
   
  
-  // ngOnInit(): void {  
-  //   const tokenTemporal = this.activatedRoute.snapshot.queryParamMap.get('token');
-  //   this.token = tokenTemporal !== null && tokenTemporal !== undefined ? tokenTemporal : '';
-  //   this.projectId = this.activatedRoute.snapshot.queryParamMap.get('id');
-   
-  //   console.log('Token:', this.token);
-  //   console.log('ID:', this.projectId);
- 
-  //   sessionStorage.setItem('Authorization', this.token);
-  //   sessionStorage.setItem(constantes.PROJECT_ID, this.projectId!);
-  // }
-  ngOnInit(): void {
-    this.activatedRoute?.params.pipe(
-       switchMap( 
-         ({id}) => this.projectId=id
-         )
-     ).subscribe(resp => this.projectId!=resp)  
-     
-     this.activatedRoute?.params.pipe(
-      switchMap( 
-        ({id}) => this.requisitoService.obtenerTipoConsultoria(this.projectId!)
-        )
-    ).subscribe(resp=>{this.tipoConsultoria=resp, 
-      window.sessionStorage.setItem('requisitos',new Boolean(this.tipoConsultoria?.requirementsEngineering).toString()),  
-      window.sessionStorage.setItem('sqa',new Boolean(this.tipoConsultoria?.sqa).toString()),    
-      window.sessionStorage.setItem('sqc',new Boolean(this.tipoConsultoria?.sqc).toString())})
+  ngOnInit(): void {  
+    const tokenTemporal = this.activatedRoute.snapshot.queryParamMap.get('token');
+    this.token = tokenTemporal !== null && tokenTemporal !== undefined ? tokenTemporal : '';
+    this.projectId = this.activatedRoute.snapshot.queryParamMap.get('id');
+    console.log('Token:', this.token);
+    console.log('ID:', this.projectId);
+    sessionStorage.setItem('Authorization', this.token);
+    this.requisitoService.obtenerTipoConsultoria(this.projectId!).subscribe((response: tipoConsultoria) => {
+      this.tipoConsultoria = response;
+      window.sessionStorage.setItem('requisitos',new Boolean(this.tipoConsultoria?.requirementsEngineering).toString()) 
+      window.sessionStorage.setItem('sqa',new Boolean(this.tipoConsultoria?.sqa).toString());  
+      window.sessionStorage.setItem('sqc',new Boolean(this.tipoConsultoria?.sqc).toString());
+    });
     
-     window.sessionStorage.setItem(constantes.PROJECT_ID, this.projectId!);  
-     //location.reload() ;  
-     
-  }
+    sessionStorage.setItem(constantes.PROJECT_ID, this.projectId!);
+   }
+
 
   redirigirRequisitos(){
     window.location.href = 'http://localhost:4200/inicio/';
   }
 
-  cargarData(){    
+  /*cargarData(){    
     this.requisitoService.obtenerTipoConsultoria(this.projectId!).then(resp=>{this.tipoConsultoria=resp, 
       window.sessionStorage.setItem('requisitos',new Boolean(this.tipoConsultoria?.requirementsEngineering).toString())  ,  
     window.sessionStorage.setItem('sqa',new Boolean(this.tipoConsultoria?.sqa).toString()),    
     window.sessionStorage.setItem('sqc',new Boolean(this.tipoConsultoria?.sqc).toString())})    
-  } 
+  } */
 }

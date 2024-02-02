@@ -66,9 +66,7 @@ export class NavbarComponent implements OnInit{
     window.sessionStorage.removeItem('requisitos');
     window.sessionStorage.removeItem('sqa');
     window.sessionStorage.removeItem('sqc');
-    window.location.href = 'http://localhost:4200/proyectos/';
-
-    
+    window.location.href = 'http://localhost:4200/inicio/';
   }
 
 }

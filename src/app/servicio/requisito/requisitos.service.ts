@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RequisitoInterface } from '../../interfaces/requisito';
-import { firstValueFrom } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
@@ -57,8 +57,8 @@ export class RequisitosService {
     return firstValueFrom(this.http.get<number>(`${this.url}/type-errors/mcc/${idReq}`));
   }
 
-  obtenerTipoConsultoria(idReq:string):Promise<tipoConsultoria>{
-    return firstValueFrom(this.http.get<tipoConsultoria>(`${this.url}/requirements/get-type-consulting?projectId=${idReq}`));
+  obtenerTipoConsultoria(idReq:string):Observable<tipoConsultoria>{
+    return this.http.get<tipoConsultoria>(`${this.url}/requirements/get-type-consulting?projectId=${idReq}`);
   }
 
   actualizarCalificado(idReq:number){

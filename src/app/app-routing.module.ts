@@ -14,7 +14,7 @@ import { NdmComponent } from './componentes/informe/ndm/ndm.component';
 
 const routes: Routes = [
   {
-    path: 'inicio/:id',
+    path: 'inicio',
     component: InicioComponent
   },
   {
