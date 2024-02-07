@@ -37,7 +37,6 @@ export class ConsultarComponent implements OnInit{
       }
     }
     if(this.calificado==this.requisitos.length){
-      window.sessionStorage.setItem('sqa',new Boolean(true).toString())
       this.requisitoService.actualizarEstado(parseInt(this.projectId!))
       this.alert.successReload(constantes.SW_BIEN_HECHO,constantes.FIN_EXITOSO);
     } else{
