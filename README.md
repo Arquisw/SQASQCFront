@@ -1,27 +1,14 @@
-# ArquisSW
+ArquiSW SQA-SQC / Single Page Application (Frontend)
+El Frontend de ArquiSW SQA-SQC corresponde a la interfaz grafica de la plataforma con la que el usuario interactua con los diferentes servicios que este ofrece, en este caso esta Single Page Applicatión, se encarga de exponer los servicios de SQA y SQC
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+Tecnología
+Node: Versión 18.16.1
+Angular: Versión 15.2.9
+Bootstrap: Versión 5.2.3
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Instalación
+Clonar el Repositorio: git clone https://github.com/Arquisw/SQASQCFront
+Abrir el proyecto con Visual Studio Code
+Instalar las dependencias del proyecto: npm install
+Ejecutar la aplicación: npm start
+Acceder a la Aplicación en la siguiente dirección: http://localhost:4201/inicio
